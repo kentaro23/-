@@ -2,7 +2,7 @@ import { ButtonLink } from "@/components/ui";
 
 export function CtaBanner({
   title = "まずは現在の運営課題を整理しませんか？",
-  description = "PoC（試行運用）前提のご相談も可能です。会員数・業務範囲・ご予算感に応じて、実行可能な委託プランをご提案します。"
+  description = "会員数・業務範囲・ご予算感に応じて、実行可能な委託プランをご提案します。"
 }: {
   title?: string;
   description?: string;

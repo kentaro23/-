@@ -8,7 +8,7 @@ export const metadata = buildMetadata({
   title: "導入の流れ",
   path: "/flow",
   description:
-    "学会事務局代行の導入フロー（PoC→本契約）をご案内します。ヒアリング、PoC設計、試行運用、本契約、定常運用まで段階的に進めます。"
+    "学会事務局代行の導入フローをご案内します。ヒアリング、お見積り、本契約・移行、運用開始、定常運用まで段階的に進めます。"
 });
 
 export default function FlowPage() {
@@ -17,8 +17,8 @@ export default function FlowPage() {
       <Section className="pb-8 pt-10">
         <PageHero
           eyebrow="Flow"
-          title="PoC（試行運用）から本契約までの導入フロー"
-          description="いきなり全面移管ではなく、まずは対象業務を絞ったPoCから開始できます。現場の運営実態に合わせて役割分担と手順を整え、本運用へ段階的に移行します。"
+          title="お問い合わせから本契約・運用開始までの導入フロー"
+          description="ヒアリング内容をもとに業務範囲と役割分担を整理し、お見積り・本契約・移行準備を経て運用を開始します。"
           actions={<ButtonLink href="/contact">まずは相談する</ButtonLink>}
         />
       </Section>
@@ -47,8 +47,8 @@ export default function FlowPage() {
 
       <Section className="bg-slate-50">
         <SectionHeading
-          title="PoCで確認するポイント"
-          description="本契約前に、現場で無理なく回る連携方法かを確認します。"
+          title="契約前に確認するポイント"
+          description="本契約後の運用開始をスムーズにするため、事前に確認しておく項目です。"
         />
         <div className="grid gap-4 md:grid-cols-2">
           {[

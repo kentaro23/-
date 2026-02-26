@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   title: "FAQ",
   path: "/faq",
   description:
-    "学会事務局代行に関するよくある質問（個人情報、会計責任範囲、契約期間、PoC、会員数上限、発送、選挙、オンライン会議対応）をまとめています。"
+    "学会事務局代行に関するよくある質問（個人情報、会計責任範囲、契約期間、契約までの流れ、会員数上限、発送、選挙、オンライン会議対応）をまとめています。"
 });
 
 export default function FaqPage() {

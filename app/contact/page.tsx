@@ -7,7 +7,7 @@ export const metadata = buildMetadata({
   title: "お問い合わせ",
   path: "/contact",
   description:
-    "学会事務局代行に関する資料請求・見積依頼・ご相談はこちら。PoCのご相談にも対応しています。"
+    "学会事務局代行に関する資料請求・見積依頼・ご相談はこちら。"
 });
 
 export default function ContactPage() {
@@ -17,7 +17,7 @@ export default function ContactPage() {
         <PageHero
           eyebrow="Contact"
           title="資料請求・見積依頼・ご相談"
-          description="会員数、現在の運営体制、課題感、委託を検討している業務範囲（会員管理・会計・会議運営・発送など）をご記入ください。PoC前提のご相談も歓迎します。"
+          description="会員数、現在の運営体制、課題感、委託を検討している業務範囲（会員管理・会計・会議運営・発送など）をご記入ください。"
         />
       </Section>
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
                 <li>・委員会 / 役員会の開催頻度</li>
                 <li>・会計処理の現状（範囲・方法）</li>
                 <li>・発送物の種類と頻度</li>
-                <li>・まず委託したい業務（PoC対象）</li>
+                <li>・優先して委託したい業務</li>
               </ul>
             </div>
             <div className="rounded-3xl border border-brand-100 bg-brand-50 p-6">

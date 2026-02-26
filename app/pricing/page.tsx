@@ -140,7 +140,7 @@ export default function PricingPage() {
         <div className="rounded-3xl border border-brand-200 bg-brand-900 p-6 text-white md:p-8">
           <h2 className="text-xl font-bold">見積依頼・相談</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-brand-100">
-            現在の運営体制（会員数、会計運用、委員会頻度、発送物）を共有いただければ、PoCを含めた実行可能な案をご提案します。
+            現在の運営体制（会員数、会計運用、委員会頻度、発送物）を共有いただければ、実行可能な運営委託プランをご提案します。
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <ButtonLink href="/contact" className="bg-white text-brand-900 hover:bg-brand-50">

@@ -44,7 +44,7 @@ export default function HomePage() {
               <div className="mt-6 flex flex-wrap gap-5 text-sm text-slate-600">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-brand-700" />
-                  PoCから開始可能
+                  段階導入にも対応
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-brand-700" />
@@ -152,7 +152,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="提供業務"
           title="業務範囲を6カテゴリで整理し、必要な部分から委託可能"
-          description="すべてを一括委託するだけでなく、一部業務からのPoCにも対応できます。"
+          description="すべてを一括委託するだけでなく、優先度の高い業務から段階的に委託範囲を設計できます。"
         />
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {serviceCategories.map((category) => {
@@ -212,8 +212,8 @@ export default function HomePage() {
       <Section>
         <SectionHeading
           eyebrow="導入の流れ"
-          title="PoCから始め、段階的に本運用へ"
-          description="初回相談からPoC設計、本契約、定常運用までを整理した進め方です。"
+          title="お問い合わせから本契約・運用開始までの流れ"
+          description="初回相談からお見積り、本契約・移行、定常運用までを整理した進め方です。"
         />
         <div className="grid gap-4 lg:grid-cols-5">
           {flowSteps.map((step, index) => (
