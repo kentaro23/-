@@ -23,7 +23,7 @@ export default function ThanksPage() {
           <div className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" aria-hidden="true" />
             <p className="text-sm leading-7 text-slate-700">
-              送信内容はダミー環境ではサーバーログに記録されます。本番導入時はメール送信・CRM連携に差し替え可能です。
+              受付確認メールを担当者メールアドレス宛に自動送信しています。届かない場合は、迷惑メールフォルダもあわせてご確認ください。
             </p>
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
