@@ -200,8 +200,8 @@ export const pricingOptionGroups = [
         note: "更新頻度・更新体制・緊急対応有無で変動"
       },
       {
-        name: "総会・年次学術集会の参加登録事務局",
-        unit: "1案件",
+        name: "総会・年次学術集会の開催",
+        unit: "要相談",
         priceRange: "20万〜150万円",
         note: "参加登録、演題受付、協賛管理、当日対応範囲で変動"
       }
