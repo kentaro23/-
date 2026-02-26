@@ -1,6 +1,6 @@
 import { PageHero } from "@/components/page-hero";
 import { Section } from "@/components/section";
-import { buildMetadata } from "@/lib/metadata";
+import { buildMetadata, siteConfig } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
   title: "プライバシーポリシー",
@@ -47,7 +47,7 @@ const sections = [
   },
   {
     title: "10. お問い合わせ窓口",
-    body: "個人情報の取り扱いに関するお問い合わせは、当サイトのお問い合わせフォームまたは info@example.com までご連絡ください。"
+    body: `個人情報の取り扱いに関するお問い合わせは、当サイトのお問い合わせフォームまたは ${siteConfig.email} までご連絡ください。`
   }
 ];
 

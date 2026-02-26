@@ -42,7 +42,7 @@ export default function ContactPage() {
               <p className="mt-2 text-sm text-slate-700">Email: {siteConfig.email}</p>
               <p className="mt-1 text-sm text-slate-700">受付時間: 平日 9:00-18:00</p>
               <p className="mt-3 text-xs leading-6 text-slate-500">
-                現在、送信内容はダミーAPIで受信し、サーバーログへ出力されます。後からSendGrid等へ差し替えしやすい構成です。
+                送信内容はメール通知に対応しています。Vercel環境変数にGmail SMTP（アプリパスワード）を設定すると、問い合わせ内容が担当メールアドレスへ届きます。
               </p>
             </div>
           </aside>

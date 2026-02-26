@@ -6,7 +6,7 @@ export const siteConfig = {
   description:
     "医療・学術領域に特化した学会事務局代行。常設事務局の外部化（BPO）により、先生方が学術活動と意思決定に集中できる運営体制を構築します。",
   url: "https://example.com",
-  email: "info@example.com"
+  email: "gakkaidaiko@gmail.com"
 };
 
 export function buildMetadata(params?: {
