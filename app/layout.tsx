@@ -7,7 +7,8 @@ import { buildMetadata, siteConfig } from "@/lib/metadata";
 
 const notoSansJp = Noto_Sans_JP({
   weight: ["400", "500", "700"],
-  display: "swap"
+  display: "swap",
+  preload: false
 });
 
 export const metadata: Metadata = {
