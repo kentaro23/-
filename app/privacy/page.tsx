@@ -5,13 +5,13 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "プライバシーポリシー",
   path: "/privacy",
-  description: "Academic Office（学会運営代行）のプライバシーポリシー雛形です。"
+  description: "がっかりさせない学会（学会運営代行）のプライバシーポリシー雛形です。"
 });
 
 const sections = [
   {
     title: "1. 事業者情報",
-    body: "Academic Office（学会運営代行）（以下「当社」といいます。）は、学会運営代行サービスの提供にあたり、個人情報の保護を重要な責務と認識し、適切に取り扱います。"
+    body: "がっかりさせない学会（学会運営代行）（以下「当社」といいます。）は、学会運営代行サービスの提供にあたり、個人情報の保護を重要な責務と認識し、適切に取り扱います。"
   },
   {
     title: "2. 取得する情報",
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
         <PageHero
           eyebrow="Privacy Policy"
           title="プライバシーポリシー"
-          description="以下は、Academic Office（学会運営代行）のプライバシーポリシー雛形です。実運用時には、事業者情報・安全管理措置・委託先等の実態に合わせて更新してください。"
+          description="以下は、がっかりさせない学会（学会運営代行）のプライバシーポリシー雛形です。実運用時には、事業者情報・安全管理措置・委託先等の実態に合わせて更新してください。"
         />
       </Section>
 

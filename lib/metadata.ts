@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "Academic Office（学会運営代行）",
-  shortName: "Academic Office",
+  name: "がっかりさせない学会",
+  shortName: "がっかりさせない学会",
   description:
     "医療・学術領域に特化した学会事務局代行。常設事務局の外部化（BPO）により、先生方が学術活動と意思決定に集中できる運営体制を構築します。",
   url: "https://example.com",

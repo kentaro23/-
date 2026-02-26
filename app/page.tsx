@@ -33,7 +33,7 @@ export default function HomePage() {
                 もっとシンプルに。
               </h1>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
-                Academic Officeは、医療・学術領域の学会事務局代行として、会員管理・会計・役員会運営・発送・問い合わせ対応を継続的に支援します。先生方が意思決定と学術活動に集中できる体制づくりを支えます。
+                がっかりさせない学会は、医療・学術領域の学会事務局代行として、会員管理・会計・役員会運営・発送・問い合わせ対応を継続的に支援します。先生方が意思決定と学術活動に集中できる体制づくりを支えます。
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <ButtonLink href="/contact">資料請求</ButtonLink>
@@ -110,7 +110,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="解決策"
           title="学会事務局代行とは、常設事務局機能を外部化するBPOです"
-          description="学会側は学術的な意思決定と方針策定を担い、Academic Officeが日常運用の実務を継続的にサポートします。業務を標準化・記録化することで、属人化を減らし、運営品質を安定させます。"
+          description="学会側は学術的な意思決定と方針策定を担い、がっかりさせない学会が日常運用の実務を継続的にサポートします。業務を標準化・記録化することで、属人化を減らし、運営品質を安定させます。"
         />
         <div className="grid gap-6 lg:grid-cols-2">
           <ResponsibilitySplitDiagram />

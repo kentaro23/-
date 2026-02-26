@@ -16,7 +16,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="min-w-0">
           <div className="text-sm font-semibold text-slate-900">
-            Academic Office
+            がっかりさせない学会
           </div>
           <div className="text-xs text-slate-500">学会運営代行（学会事務局代行）</div>
         </Link>

@@ -54,7 +54,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} Academic Office
+        © {new Date().getFullYear()} がっかりさせない学会
       </div>
     </footer>
   );
