@@ -5,7 +5,6 @@ import { buildMetadata } from "@/lib/metadata";
 import {
   pricingCoreScope,
   pricingFactors,
-  pricingModelNotes,
   pricingOptionGroups,
   pricingTiers
 } from "@/lib/site-data";
@@ -59,15 +58,8 @@ export default function PricingPage() {
             </Card>
           ))}
         </div>
-        <div className="mt-6 grid gap-3">
-          {pricingModelNotes.map((note) => (
-            <div
-              key={note}
-              className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700"
-            >
-              {note}
-            </div>
-          ))}
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-white px-4 py-4 text-sm leading-7 text-slate-700">
+          会員数の詳細（例: 120名 / 280名 / 650名 など）や、会費体系、委員会開催頻度、会計処理範囲によって金額は変動します。詳細なお見積は一度お問い合わせください。
         </div>
       </Section>
 
