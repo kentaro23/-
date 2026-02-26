@@ -1,7 +1,7 @@
 import { ResponsibilitySplitDiagram } from "@/components/diagrams";
 import { PageHero } from "@/components/page-hero";
 import { Section, SectionHeading } from "@/components/section";
-import { ButtonLink, Card } from "@/components/ui";
+import { ButtonLink, Card, Pill } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
 import { extendedServiceItems, serviceCategories, spotServices } from "@/lib/site-data";
 
@@ -34,7 +34,7 @@ export default function ServicesPage() {
       <Section>
         <SectionHeading
           title="提供業務一覧（6カテゴリ）"
-          description="ご提示いただいた学会事務局業務を、運用しやすいカテゴリに整理して掲載しています。"
+          description="ご提示いただいた学会事務局業務を、運用しやすいカテゴリに整理して掲載しています。通常運用として継続発生する業務は、月額コアプランの対象として設計しやすい領域です。"
         />
         <div className="grid gap-5 lg:grid-cols-2">
           {serviceCategories.map((category) => {
@@ -42,11 +42,12 @@ export default function ServicesPage() {
             return (
               <Card key={category.title} className="p-0 overflow-hidden">
                 <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <div className="rounded-xl bg-white p-2 text-brand-800 ring-1 ring-slate-200">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h2 className="text-lg font-semibold text-slate-900">{category.title}</h2>
+                    <Pill className="ml-auto">月額コアプラン対象</Pill>
                   </div>
                 </div>
                 <div className="px-6 py-5">
@@ -79,11 +80,14 @@ export default function ServicesPage() {
             return (
               <Card key={service.title} className="p-0 overflow-hidden bg-white">
                 <div className="border-b border-slate-200 bg-white px-6 py-4">
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <div className="rounded-xl bg-brand-50 p-2 text-brand-800 ring-1 ring-brand-100">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h2 className="text-lg font-semibold text-slate-900">{service.title}</h2>
+                    <Pill className="ml-auto border-slate-200 bg-slate-100 text-slate-800">
+                      単発オプション対象
+                    </Pill>
                   </div>
                 </div>
                 <div className="px-6 py-5">
@@ -118,6 +122,11 @@ export default function ServicesPage() {
           title="追加対応しやすい周辺業務・運営改善領域"
           description="学会運営事務局代行の公開サービスでよく見られる周辺業務を踏まえ、当サイトでもご相談の多い項目を整理しています。必要な項目のみ追加し、過不足のない委託設計を行います。"
         />
+        <div className="mb-5">
+          <Pill className="border-slate-200 bg-slate-100 text-slate-800">
+            追加オプション候補
+          </Pill>
+        </div>
         <div className="grid gap-4 md:grid-cols-2">
           {extendedServiceItems.map((item) => (
             <Card key={item.title} className="bg-white">
