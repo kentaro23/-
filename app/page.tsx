@@ -7,7 +7,7 @@ import {
   MoveRight
 } from "lucide-react";
 import { CtaBanner } from "@/components/cta-banner";
-import { FunctionMapDiagram, ResponsibilitySplitDiagram } from "@/components/diagrams";
+import { ResponsibilitySplitDiagram } from "@/components/diagrams";
 import { Section, SectionHeading } from "@/components/section";
 import { ButtonLink, Card, Pill } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
@@ -143,15 +143,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </Section>
-
-      <Section className="bg-slate-50">
-        <SectionHeading
-          eyebrow="図解"
-          title="学会運営代行の全体像（機能マップ）"
-          description="会員管理、会計、役員会運営、発送・問い合わせ、資産管理、選挙・法人運営まで、学会事務局機能をカテゴリごとに整理して委託範囲を明確化します。"
-        />
-        <FunctionMapDiagram />
       </Section>
 
       <Section>
