@@ -17,7 +17,11 @@ export function CtaBanner({
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <ButtonLink href="/contact" className="bg-white text-brand-900 hover:bg-brand-50">
+          <ButtonLink
+            href="/contact"
+            variant="secondary"
+            className="border-white bg-white text-brand-900 hover:bg-brand-50"
+          >
             資料請求・見積依頼
           </ButtonLink>
         </div>
