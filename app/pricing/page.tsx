@@ -143,7 +143,11 @@ export default function PricingPage() {
             現在の運営体制（会員数、会計運用、委員会頻度、発送物）を共有いただければ、実行可能な運営委託プランをご提案します。
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <ButtonLink href="/contact" className="bg-white text-brand-900 hover:bg-brand-50">
+            <ButtonLink
+              href="/contact"
+              variant="secondary"
+              className="border-white bg-white text-brand-900 hover:bg-brand-50"
+            >
               見積依頼フォームへ
             </ButtonLink>
             <ButtonLink

@@ -38,12 +38,9 @@ export default function ContactPage() {
               </ul>
             </div>
             <div className="rounded-3xl border border-brand-100 bg-brand-50 p-6">
-              <h2 className="text-sm font-semibold text-brand-900">連絡先（ダミー）</h2>
+              <h2 className="text-sm font-semibold text-brand-900">連絡先</h2>
               <p className="mt-2 text-sm text-slate-700">Email: {siteConfig.email}</p>
               <p className="mt-1 text-sm text-slate-700">受付時間: 平日 9:00-18:00</p>
-              <p className="mt-3 text-xs leading-6 text-slate-500">
-                送信内容はメール通知に対応しています。Vercel環境変数にGmail SMTP（アプリパスワード）を設定すると、問い合わせ内容が担当メールアドレスへ届きます。
-              </p>
             </div>
           </aside>
         </div>
