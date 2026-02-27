@@ -5,6 +5,12 @@ import { ButtonLink, Card, Pill } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
 import { extendedServiceItems, serviceCategories, spotServices } from "@/lib/site-data";
 
+const coreCategoryTitles = new Set([
+  "会員管理",
+  "会計財務",
+  "役員会・委員会運営"
+]);
+
 export const metadata = buildMetadata({
   title: "サービス詳細",
   path: "/services",
@@ -47,7 +53,9 @@ export default function ServicesPage() {
                       <Icon className="h-5 w-5" />
                     </div>
                     <h2 className="text-lg font-semibold text-slate-900">{category.title}</h2>
-                    <Pill className="ml-auto">月額コアプラン対象</Pill>
+                    {coreCategoryTitles.has(category.title) ? (
+                      <Pill className="ml-auto">月額コアプラン対象</Pill>
+                    ) : null}
                   </div>
                 </div>
                 <div className="px-6 py-5">

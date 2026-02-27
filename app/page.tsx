@@ -11,7 +11,13 @@ import { FunctionMapDiagram, ResponsibilitySplitDiagram } from "@/components/dia
 import { Section, SectionHeading } from "@/components/section";
 import { ButtonLink, Card, Pill } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
-import { challenges, flowSteps, serviceCategories, strengths } from "@/lib/site-data";
+import {
+  challenges,
+  flowSteps,
+  serviceCategories,
+  spotServices,
+  strengths
+} from "@/lib/site-data";
 
 export const metadata = buildMetadata({
   title: "トップ",
@@ -181,6 +187,34 @@ export default function HomePage() {
         <div className="mt-8">
           <ButtonLink href="/services" variant="secondary">
             サービス詳細ページへ
+          </ButtonLink>
+        </div>
+      </Section>
+
+      <Section className="bg-slate-50">
+        <SectionHeading
+          eyebrow="単発対応"
+          title="年会・総会開催など、スポット業務にも対応"
+          description="月額コアプランとは別に、総会・年次学術集会の開催支援、学会誌関連業務、HP制作・更新運用などの単発・スポット業務を必要な範囲でご相談いただけます。"
+        />
+        <div className="grid gap-4 md:grid-cols-2">
+          {spotServices.slice(0, 4).map((service) => (
+            <Card key={service.title} className="bg-white">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-sm font-semibold text-slate-900 md:text-base">
+                  {service.title}
+                </h3>
+                <Pill className="border-slate-200 bg-slate-100 text-slate-800">
+                  単発オプション
+                </Pill>
+              </div>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{service.summary}</p>
+            </Card>
+          ))}
+        </div>
+        <div className="mt-8">
+          <ButtonLink href="/services" variant="secondary">
+            単発サービスの詳細を見る
           </ButtonLink>
         </div>
       </Section>
