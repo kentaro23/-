@@ -2,7 +2,7 @@ import { serviceCategories } from "@/lib/site-data";
 
 export function FunctionMapDiagram() {
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+    <div className="texture-mesh rounded-3xl border border-slate-200 bg-white p-5 shadow-panel md:p-6">
       <div className="mb-4 flex items-center justify-between gap-3">
         <h3 className="text-base font-semibold text-slate-900">
           学会運営代行の機能マップ（6カテゴリ）
@@ -54,12 +54,12 @@ export function ResponsibilitySplitDiagram() {
   ];
 
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+    <div className="texture-mesh rounded-3xl border border-slate-200 bg-white p-5 shadow-panel md:p-6">
       <h3 className="text-base font-semibold text-slate-900">
         分担イメージ（意思決定 / 実務）
       </h3>
       <div className="mt-5 grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
-        <div className="rounded-2xl border border-brand-200 bg-brand-50 p-4">
+        <div className="rounded-2xl border border-brand-200 bg-brand-50/70 p-4">
           <p className="text-sm font-semibold text-brand-900">意思決定（学会）</p>
           <ul className="mt-3 space-y-2 text-sm text-slate-700">
             {academicSide.map((item) => (
@@ -90,7 +90,7 @@ export function ResponsibilitySplitDiagram() {
             />
           </svg>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
           <p className="text-sm font-semibold text-slate-900">実務（代行）</p>
           <ul className="mt-3 space-y-2 text-sm text-slate-700">
             {officeSide.map((item) => (

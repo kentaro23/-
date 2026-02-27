@@ -23,11 +23,11 @@ export function FAQAccordion({ items }: { items: readonly Item[] }) {
       {items.map((item, index) => {
         const isOpen = openIndexes.includes(index);
         return (
-          <div key={item.question} className="rounded-2xl border border-slate-200 bg-white">
+          <div key={item.question} className="texture-mesh rounded-2xl border border-slate-200 bg-white">
             <button
               type="button"
               onClick={() => toggle(index)}
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
               aria-expanded={isOpen}
             >
               <span className="text-sm font-semibold text-slate-900 md:text-base">

@@ -16,6 +16,9 @@ html {
 
 body {
   @apply bg-brand-50/40 text-slate-800 antialiased;
+  background-image:
+    radial-gradient(circle at 10% 5%, rgba(186, 216, 236, 0.28), transparent 34%),
+    radial-gradient(circle at 90% 0%, rgba(31, 177, 159, 0.12), transparent 32%);
 }
 
 a {
@@ -24,6 +27,17 @@ a {
 
 .hero-grid {
   background-size: 22px 22px;
+}
+
+.texture-dots {
+  background-image: url("/assets/textures/dots.svg");
+  background-size: 120px 120px;
+}
+
+.texture-mesh {
+  background-image: url("/assets/textures/mesh.svg");
+  background-size: cover;
+  background-position: center;
 }
 
 h1,

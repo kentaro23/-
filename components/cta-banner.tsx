@@ -8,7 +8,7 @@ export function CtaBanner({
   description?: string;
 }) {
   return (
-    <div className="rounded-3xl border border-brand-200 bg-brand-900 p-6 text-white md:p-8">
+    <div className="texture-mesh rounded-3xl border border-brand-200 bg-brand-900 p-6 text-white shadow-panel md:p-8">
       <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <h3 className="text-xl font-bold md:text-2xl">{title}</h3>

@@ -28,8 +28,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b border-slate-200/90 bg-white/95 backdrop-blur transition-all",
-        isCompact ? "shadow-sm" : ""
+        "sticky top-0 z-50 border-b border-slate-200/90 bg-white/85 backdrop-blur-md transition-all",
+        isCompact ? "shadow-panel" : ""
       )}
     >
       <div
@@ -58,13 +58,13 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <ButtonLink href="/contact" className="ml-2 px-4 py-2">
+          <ButtonLink href="/contact" className="ml-2 rounded-full px-5 py-2">
             資料請求・見積依頼
           </ButtonLink>
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ButtonLink href="/contact" className="h-9 px-3 text-xs">
+          <ButtonLink href="/contact" className="h-9 rounded-full px-3 text-xs">
             資料請求・見積依頼
           </ButtonLink>
           <details>

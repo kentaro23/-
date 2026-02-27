@@ -78,7 +78,7 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-5">
+    <form onSubmit={handleSubmit} noValidate className="space-y-6">
       <div className="grid gap-5 md:grid-cols-2">
         <Field
           label="団体名"
@@ -169,7 +169,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="inline-flex items-center justify-center rounded-xl bg-brand-800 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-70"
+        className="inline-flex items-center justify-center rounded-2xl bg-brand-800 px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isPending ? "送信中..." : "送信する"}
       </button>
@@ -193,7 +193,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <div className="mb-2 text-sm font-medium text-slate-800">
+      <div className="mb-2 text-sm font-semibold text-slate-800">
         {label}
         {required ? <span className="ml-1 text-red-600">*</span> : null}
       </div>
@@ -206,10 +206,10 @@ function Field({
 
 function inputClass(hasError: boolean) {
   return [
-    "w-full rounded-xl border bg-white px-4 py-3 text-sm text-slate-900 outline-none transition",
+    "w-full rounded-2xl border bg-white px-4 py-3 text-sm text-slate-900 outline-none transition duration-200",
     "placeholder:text-slate-400 focus:ring-2 focus:ring-brand-200",
     hasError
       ? "border-red-300 focus:border-red-400"
-      : "border-slate-300 focus:border-brand-500"
+      : "border-slate-300 focus:border-brand-500 hover:border-brand-200"
   ].join(" ");
 }

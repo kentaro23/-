@@ -18,12 +18,12 @@ export function ButtonLink({
     <Link
       {...props}
       className={cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-xl px-5 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2",
+        "inline-flex items-center justify-center whitespace-nowrap rounded-2xl px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2",
         variant === "primary" &&
-          "bg-brand-800 text-white hover:bg-brand-900 shadow-soft",
+          "bg-brand-800 text-white hover:-translate-y-0.5 hover:bg-brand-900 shadow-panel",
         variant === "secondary" &&
-          "border border-brand-200 bg-white text-brand-900 hover:bg-brand-100",
-        variant === "ghost" && "text-brand-800 hover:bg-brand-100",
+          "border border-brand-200 bg-white text-brand-900 hover:-translate-y-0.5 hover:bg-brand-100",
+        variant === "ghost" && "text-brand-800 hover:bg-brand-100 hover:text-brand-900",
         className
       )}
     >
@@ -40,7 +40,7 @@ export function Card({
     <div
       {...props}
       className={cn(
-        "rounded-2xl border border-slate-200 bg-white p-6 shadow-sm",
+        "rounded-2xl border border-slate-200/90 bg-white p-6 shadow-panel transition duration-200 hover:-translate-y-0.5",
         className
       )}
     />

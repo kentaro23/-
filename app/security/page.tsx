@@ -19,11 +19,12 @@ export default function SecurityPage() {
           eyebrow="Security"
           title="情報管理と運用統制"
           description="医療・学術領域の事務局業務に必要な情報管理を、アクセス制御・ログ・手順書に基づいて運用します。"
+          visual="security"
           actions={<ButtonLink href="/contact">管理体制について相談する</ButtonLink>}
         />
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <SectionHeading
           title="管理項目"
           description="運用開始前に責任分界と管理ルールを明文化し、継続運用で監査可能性を確保します。"
@@ -38,7 +39,7 @@ export default function SecurityPage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-50">
+      <Section className="bg-slate-50 texture-mesh">
         <SectionHeading title="運用ポリシー（要約）" />
         <div className="grid gap-3 md:grid-cols-2">
           {[

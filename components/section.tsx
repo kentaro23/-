@@ -11,7 +11,7 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={cn("py-12 md:py-20", className)}>
+    <section id={id} className={cn("py-14 md:py-24", className)}>
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">{children}</div>
     </section>
   );
@@ -29,13 +29,13 @@ export function SectionHeading({
   align?: "left" | "center";
 }) {
   return (
-    <div className={cn("mb-8 md:mb-10", align === "center" && "text-center")}>
+    <div className={cn("mb-10 md:mb-12", align === "center" && "text-center")}>
       {eyebrow ? (
-        <p className="mb-3 text-sm font-semibold tracking-wide text-brand-800">
+        <p className="mb-3 text-xs font-semibold tracking-[0.14em] text-brand-700 md:text-sm">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">
+      <h2 className="text-2xl font-bold text-slate-900 md:text-4xl">
         {title}
       </h2>
       {description ? (

@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/contact-form";
+import { HeroVisual } from "@/components/hero-visual";
 import { PageHero } from "@/components/page-hero";
 import { Section } from "@/components/section";
 import { buildMetadata, siteConfig } from "@/lib/metadata";
@@ -18,15 +19,19 @@ export default function ContactPage() {
           eyebrow="Contact"
           title="資料請求・見積依頼・ご相談"
           description="会員数、現在の運営体制、課題感、委託を検討している業務範囲（会員管理・会計・会議運営・発送など）をご記入ください。"
+          visual="contact"
         />
       </Section>
 
-      <Section className="pt-0">
+      <Section className="pt-0 texture-dots">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
             <ContactForm />
           </div>
           <aside className="space-y-4">
+            <div className="rounded-3xl border border-slate-200 bg-white p-4">
+              <HeroVisual name="contact" />
+            </div>
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
               <h2 className="text-sm font-semibold text-slate-900">ご相談時にあるとスムーズな情報</h2>
               <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-600">

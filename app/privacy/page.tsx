@@ -59,10 +59,11 @@ export default function PrivacyPage() {
           eyebrow="Privacy Policy"
           title="プライバシーポリシー"
           description="以下は、がっかりさせない学会（学会運営代行）のプライバシーポリシー雛形です。実運用時には、事業者情報・安全管理措置・委託先等の実態に合わせて更新してください。"
+          visual="privacy"
         />
       </Section>
 
-      <Section className="pt-0">
+      <Section className="pt-0 texture-dots">
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
           <div className="space-y-6">
             {sections.map((section) => (

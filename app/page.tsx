@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   ChevronRight,
   MoveRight
 } from "lucide-react";
 import { CtaBanner } from "@/components/cta-banner";
+import { HeroVisual } from "@/components/hero-visual";
 import { ResponsibilitySplitDiagram } from "@/components/diagrams";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { TrustBadges } from "@/components/trust-badges";
@@ -17,7 +19,6 @@ import {
   flowSteps,
   pricingTiers,
   serviceCategories,
-  strengths,
   trustItems
 } from "@/lib/site-data";
 
@@ -30,7 +31,7 @@ export default function HomePage() {
   return (
     <>
       <Section className="pb-8 pt-8 md:pb-12 md:pt-12">
-        <div className="relative overflow-hidden rounded-4xl border border-brand-100 bg-gradient-to-b from-white via-white to-brand-50 p-6 md:p-10">
+        <div className="texture-mesh relative overflow-hidden rounded-4xl border border-brand-100 bg-gradient-to-b from-white via-white to-brand-50 p-6 md:p-10">
           <div className="pointer-events-none absolute inset-0 bg-hero-grid bg-hero-grid opacity-70 hero-grid" />
           <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
@@ -52,6 +53,7 @@ export default function HomePage() {
             </div>
 
             <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-panel md:p-6">
+              <HeroVisual name="home" className="mb-5" />
               <p className="text-sm font-semibold text-slate-900">3秒でわかる導入効果</p>
               <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
                 <StatCard value="実務負荷を分散" label="担当依存を軽減" />
@@ -69,7 +71,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section className="bg-white">
+      <Section className="texture-dots bg-white">
         <SectionHeading
           eyebrow="課題"
           title="学会運営の実務が、診療・研究・教育の時間を圧迫していませんか"
@@ -89,7 +91,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-50">
+      <Section className="bg-slate-50 texture-mesh">
         <SectionHeading
           eyebrow="解決"
           title="意思決定は学会、実務は事務局代行で分担"
@@ -98,7 +100,7 @@ export default function HomePage() {
         <ResponsibilitySplitDiagram />
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <SectionHeading
           eyebrow="提供価値"
           title="6カテゴリの実務を、必要範囲から委託"
@@ -108,7 +110,14 @@ export default function HomePage() {
           {serviceCategories.map((category) => {
             const Icon = category.icon;
             return (
-              <Card key={category.title}>
+              <Card key={category.title} className="overflow-hidden">
+                <Image
+                  src={`/assets/illustrations/service-${(serviceCategories.indexOf(category) % 6) + 1}.svg`}
+                  alt=""
+                  width={320}
+                  height={180}
+                  className="mb-4 h-auto w-full rounded-xl border border-brand-100/60"
+                />
                 <div className="flex items-center gap-3">
                   <div className="rounded-xl bg-brand-50 p-2 text-brand-800 ring-1 ring-brand-100">
                     <Icon className="h-5 w-5" />
@@ -138,8 +147,8 @@ export default function HomePage() {
         <div className="grid gap-4 lg:grid-cols-5">
           {flowSteps.map((step, index) => (
             <div key={step.step} className="relative">
-              <Card className="h-full">
-                <p className="text-xs font-semibold tracking-wide text-brand-800">STEP {step.step}</p>
+              <Card className="h-full border-brand-100/80">
+                <p className="inline-flex rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold tracking-wide text-brand-800">STEP {step.step}</p>
                 <h3 className="mt-2 text-sm font-semibold text-slate-900">{step.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{step.text}</p>
               </Card>
@@ -151,7 +160,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <SectionHeading
           eyebrow="料金"
           title="月額コア + オプションで、運用実態に合わせる"
@@ -159,7 +168,7 @@ export default function HomePage() {
         />
         <div className="grid gap-4 md:grid-cols-3">
           {pricingTiers.map((tier) => (
-            <Card key={tier.name} className="bg-white">
+            <Card key={tier.name} className="bg-white texture-mesh">
               <h3 className="text-sm font-semibold text-brand-900">{tier.name}</h3>
               <p className="mt-1 text-sm text-slate-600">{tier.members}</p>
               <p className="mt-3 text-2xl font-bold text-slate-900">{tier.price}</p>

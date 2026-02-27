@@ -19,11 +19,12 @@ export default function SamplesPage() {
           eyebrow="Samples"
           title="成果物サンプル"
           description="導入後にどのような形で情報が見えるかを、代表的な成果物サンプルで確認いただけます。"
+          visual="samples"
           actions={<ButtonLink href="/contact">実際の運用イメージを相談する</ButtonLink>}
         />
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <SectionHeading
           title="代表サンプル"
           description="以下はダミーのイメージです。学会ごとの運用に合わせて形式を調整します。"

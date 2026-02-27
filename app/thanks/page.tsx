@@ -18,6 +18,7 @@ export default function ThanksPage() {
           eyebrow="Thanks"
           title="お問い合わせを受け付けました"
           description="内容を確認のうえ、担当よりご連絡いたします。お急ぎの場合は、フォームに記載いただいた内容に補足して再度ご連絡ください。"
+          visual="contact"
         />
         <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="flex items-start gap-3">

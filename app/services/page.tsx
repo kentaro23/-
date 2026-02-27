@@ -1,6 +1,7 @@
 import { ResponsibilitySplitDiagram } from "@/components/diagrams";
 import { MonthlyCycle } from "@/components/monthly-cycle";
 import { PageHero } from "@/components/page-hero";
+import Image from "next/image";
 import { Section, SectionHeading } from "@/components/section";
 import { ButtonLink, Card, Pill } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
@@ -29,6 +30,7 @@ export default function ServicesPage() {
           eyebrow="Services"
           title="学会事務局として、日常運用を実務レベルで支援"
           description="業務内容だけでなく、毎月の成果物と運用サイクルを明確化したうえで委託範囲を設計します。"
+          visual="services"
           actions={
             <>
               <ButtonLink href="/contact">資料請求</ButtonLink>
@@ -40,7 +42,7 @@ export default function ServicesPage() {
         />
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <SectionHeading
           title="提供業務一覧（6カテゴリ）"
           description="コア業務3領域を中心に、必要に応じて周辺業務を追加できる設計です。"
@@ -63,6 +65,13 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div className="px-6 py-5">
+                  <Image
+                    src={`/assets/illustrations/service-${(serviceCategories.indexOf(category) % 6) + 1}.svg`}
+                    alt=""
+                    width={320}
+                    height={180}
+                    className="mb-4 h-auto w-full rounded-xl border border-brand-100/60"
+                  />
                   <p className="text-sm leading-7 text-slate-600">{category.summary}</p>
                   <ul className="mt-4 space-y-2">
                     {category.items.map((item) => (
@@ -96,11 +105,11 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-50">
+      <Section className="bg-slate-50 texture-mesh">
         <MonthlyCycle />
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <SectionHeading
           title="単発・スポットでご相談いただける業務"
           description="総会・年次学術集会の開催や学会誌関連など、非定常業務は必要な時だけ追加できます。"
@@ -138,7 +147,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-50">
+      <Section className="bg-slate-50 texture-mesh">
         <SectionHeading
           title="責任分界の基本"
           description="実務を委託しても、最終責任と意思決定は学会側に残ることを明確化して運用します。"
@@ -155,7 +164,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <SectionHeading
           title="追加対応しやすい周辺業務"
           description="競合サービスで見られる周辺領域も、必要時に段階的に追加できます。"

@@ -2,6 +2,7 @@ import { FAQAccordion } from "@/components/faq-accordion";
 import { PageHero } from "@/components/page-hero";
 import { Section, SectionHeading } from "@/components/section";
 import { ButtonLink, Card } from "@/components/ui";
+import { Coins, Layers3, Landmark } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
 import {
   estimateCases,
@@ -27,11 +28,12 @@ export default function PricingPage() {
           eyebrow="Pricing"
           title="月額コア + オプションで、過不足のない運営体制へ"
           description="会員管理・会計財務・役員会/委員会運営を月額コアに集約し、非定常業務をオプション化して最適な見積を行います。"
+          visual="pricing"
           actions={<ButtonLink href="/contact">見積依頼をする</ButtonLink>}
         />
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <SectionHeading
           title="月額コアプラン（基本構成）"
           description="会員数に応じた目安レンジです。詳細人数・運用負荷により変動するため、最終金額は個別見積となります。"
@@ -50,11 +52,16 @@ export default function PricingPage() {
           </ul>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
-          {pricingTiers.map((tier) => (
-            <Card key={tier.name} className="flex h-full flex-col">
-              <div className="rounded-xl bg-brand-50 p-4">
+          {pricingTiers.map((tier, index) => (
+            <Card key={tier.name} className="texture-mesh flex h-full flex-col">
+              <div className="rounded-xl bg-brand-50/80 p-4">
                 <p className="text-sm font-semibold text-brand-900">{tier.name}</p>
                 <p className="mt-1 text-sm text-slate-700">{tier.members}</p>
+              </div>
+              <div className="mt-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-brand-800 ring-1 ring-brand-100">
+                {index === 0 ? <Coins className="h-4 w-4" /> : null}
+                {index === 1 ? <Layers3 className="h-4 w-4" /> : null}
+                {index === 2 ? <Landmark className="h-4 w-4" /> : null}
               </div>
               <p className="mt-4 whitespace-nowrap text-2xl font-bold text-slate-900 sm:text-3xl">
                 {tier.price}
@@ -65,7 +72,7 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-50">
+      <Section className="bg-slate-50 texture-mesh">
         <SectionHeading
           title="オプション料金（従量 / スポット / 月額追加）"
           description="学会誌、HP、選挙、総会・年次学術集会などは、実施頻度差が大きいためオプション設定です。"
@@ -117,7 +124,7 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <SectionHeading
           title="見積変動要素"
           description="運用条件ごとに必要工数が変わるため、以下を基準に見積を算出します。"
@@ -142,7 +149,7 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-50">
+      <Section className="bg-slate-50 texture-mesh">
         <SectionHeading title="見積例" description="実際の見積イメージ（架空例）です。" />
         <div className="grid gap-4 md:grid-cols-2">
           {estimateCases.map((item) => (

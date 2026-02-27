@@ -20,11 +20,12 @@ export default function FaqPage() {
           eyebrow="FAQ"
           title="よくある質問"
           description="導入前によくいただくご質問をまとめています。個別の運営条件によって回答が変わる場合は、ヒアリング時に具体的にご説明します。"
+          visual="faq"
           actions={<ButtonLink href="/contact">個別に相談する</ButtonLink>}
         />
       </Section>
 
-      <Section>
+      <Section className="texture-dots">
         <FAQAccordion items={faqItems} />
       </Section>
     </>

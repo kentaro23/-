@@ -3,8 +3,8 @@ import { siteConfig } from "@/lib/metadata";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white pb-24 md:pb-0">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
+    <footer className="texture-mesh border-t border-slate-200 bg-white pb-24 md:pb-0">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <p className="text-sm font-semibold text-brand-900">{siteConfig.name}</p>
           <p className="mt-2 text-sm leading-7 text-slate-600">
