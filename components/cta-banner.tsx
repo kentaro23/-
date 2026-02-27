@@ -24,6 +24,13 @@ export function CtaBanner({
           >
             資料請求・見積依頼
           </ButtonLink>
+          <ButtonLink
+            href="/contact"
+            variant="secondary"
+            className="border-white/40 bg-white/10 text-white hover:bg-white/20"
+          >
+            30分相談
+          </ButtonLink>
         </div>
       </div>
     </div>

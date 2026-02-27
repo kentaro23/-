@@ -4,6 +4,10 @@
 
 :root {
   color-scheme: light;
+  --bg: #f8fbfd;
+  --surface: #ffffff;
+  --ink: #0f172a;
+  --muted: #475569;
 }
 
 html {
@@ -11,7 +15,7 @@ html {
 }
 
 body {
-  @apply bg-white text-slate-800 antialiased;
+  @apply bg-brand-50/40 text-slate-800 antialiased;
 }
 
 a {
@@ -20,4 +24,18 @@ a {
 
 .hero-grid {
   background-size: 22px 22px;
+}
+
+h1,
+h2,
+h3 {
+  @apply tracking-tight;
+}
+
+.text-body {
+  @apply text-sm leading-7 text-slate-600 md:text-base;
+}
+
+.text-caption {
+  @apply text-xs leading-6 text-slate-500;
 }

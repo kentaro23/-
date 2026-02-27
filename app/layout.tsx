@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import { FloatingCta } from "@/components/floating-cta";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { buildMetadata, siteConfig } from "@/lib/metadata";
@@ -26,6 +27,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <FloatingCta />
         </div>
       </body>
     </html>

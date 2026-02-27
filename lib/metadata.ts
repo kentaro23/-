@@ -5,7 +5,7 @@ export const siteConfig = {
   shortName: "がっかりさせない学会",
   description:
     "医療・学術領域に特化した学会事務局代行。常設事務局の外部化（BPO）により、先生方が学術活動と意思決定に集中できる運営体制を構築します。",
-  url: "https://example.com",
+  url: "https://academic-office-site.vercel.app",
   email: "gakkaidaiko@gmail.com"
 };
 
@@ -16,7 +16,7 @@ export function buildMetadata(params?: {
 }): Metadata {
   const title = params?.title
     ? `${params.title} | ${siteConfig.shortName}`
-    : `${siteConfig.shortName} | 学会運営代行（学会事務局代行）`;
+    : `${siteConfig.shortName} | 学会事務局代行`;
   const description = params?.description ?? siteConfig.description;
   const url = new URL(params?.path ?? "/", siteConfig.url).toString();
 

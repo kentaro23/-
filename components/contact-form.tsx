@@ -80,25 +80,32 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
       <div className="grid gap-5 md:grid-cols-2">
-        <Field label="団体名" required error={errors.organization}>
+        <Field
+          label="団体名"
+          required
+          error={errors.organization}
+          hint="学会名・研究会名・法人名をご記入ください。"
+        >
           <input
             value={values.organization}
             onChange={handleChange("organization")}
             className={inputClass(Boolean(errors.organization))}
             autoComplete="organization"
+            aria-invalid={Boolean(errors.organization)}
           />
         </Field>
 
-        <Field label="担当者名" required error={errors.name}>
+        <Field label="担当者名" required error={errors.name} hint="ご連絡先となる方のお名前">
           <input
             value={values.name}
             onChange={handleChange("name")}
             className={inputClass(Boolean(errors.name))}
             autoComplete="name"
+            aria-invalid={Boolean(errors.name)}
           />
         </Field>
 
-        <Field label="メール" required error={errors.email}>
+        <Field label="メール" required error={errors.email} hint="確認メールを送信します。">
           <input
             type="email"
             value={values.email}
@@ -106,25 +113,28 @@ export function ContactForm() {
             className={inputClass(Boolean(errors.email))}
             autoComplete="email"
             inputMode="email"
+            aria-invalid={Boolean(errors.email)}
           />
         </Field>
 
-        <Field label="電話（任意）" error={errors.phone}>
+        <Field label="電話（任意）" error={errors.phone} hint="急ぎ対応が必要な場合のみご入力ください。">
           <input
             type="tel"
             value={values.phone}
             onChange={handleChange("phone")}
             className={inputClass(Boolean(errors.phone))}
             autoComplete="tel"
+            aria-invalid={Boolean(errors.phone)}
           />
         </Field>
       </div>
 
-      <Field label="会員数" required error={errors.memberCount}>
+      <Field label="会員数" required error={errors.memberCount} hint="概算でも問題ありません。">
         <select
           value={values.memberCount}
           onChange={handleChange("memberCount")}
           className={inputClass(Boolean(errors.memberCount))}
+          aria-invalid={Boolean(errors.memberCount)}
         >
           {memberCountOptions.map((option) => (
             <option key={option} value={option}>
@@ -134,13 +144,19 @@ export function ContactForm() {
         </select>
       </Field>
 
-      <Field label="相談内容" required error={errors.message}>
+      <Field
+        label="相談内容"
+        required
+        error={errors.message}
+        hint="委託したい業務、課題、希望開始時期などを記載ください。"
+      >
         <textarea
           value={values.message}
           onChange={handleChange("message")}
           className={inputClass(Boolean(errors.message))}
           rows={6}
           placeholder="現在の運営体制、委託を検討している業務範囲、課題感などをご記入ください。"
+          aria-invalid={Boolean(errors.message)}
         />
       </Field>
 
@@ -157,6 +173,7 @@ export function ContactForm() {
       >
         {isPending ? "送信中..." : "送信する"}
       </button>
+      <p className="text-xs text-slate-500">通常1営業日以内にご返信します。</p>
     </form>
   );
 }
@@ -165,11 +182,13 @@ function Field({
   label,
   required,
   error,
+  hint,
   children
 }: {
   label: string;
   required?: boolean;
   error?: string;
+  hint?: string;
   children: ReactNode;
 }) {
   return (
@@ -178,6 +197,7 @@ function Field({
         {label}
         {required ? <span className="ml-1 text-red-600">*</span> : null}
       </div>
+      {hint ? <p className="mb-2 text-xs text-slate-500">{hint}</p> : null}
       {children}
       {error ? <p className="mt-1 text-xs text-red-600">{error}</p> : null}
     </label>

@@ -27,6 +27,12 @@ export default function ThanksPage() {
             </p>
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
+            <ButtonLink href="/samples" variant="secondary">
+              サンプル資料を見る
+            </ButtonLink>
+            <ButtonLink href="/contact" variant="secondary">
+              30分相談を予約（ダミー）
+            </ButtonLink>
             <ButtonLink href="/">トップへ戻る</ButtonLink>
             <ButtonLink href="/services" variant="secondary">
               サービス詳細を見る

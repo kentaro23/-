@@ -1,15 +1,18 @@
 import { ResponsibilitySplitDiagram } from "@/components/diagrams";
+import { MonthlyCycle } from "@/components/monthly-cycle";
 import { PageHero } from "@/components/page-hero";
 import { Section, SectionHeading } from "@/components/section";
 import { ButtonLink, Card, Pill } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
-import { extendedServiceItems, serviceCategories, spotServices } from "@/lib/site-data";
+import {
+  boundaryItems,
+  extendedServiceItems,
+  serviceCategories,
+  serviceOutputs,
+  spotServices
+} from "@/lib/site-data";
 
-const coreCategoryTitles = new Set([
-  "会員管理",
-  "会計財務",
-  "役員会・委員会運営"
-]);
+const coreCategoryTitles = new Set(["会員管理", "会計財務", "役員会・委員会運営"]);
 
 export const metadata = buildMetadata({
   title: "サービス詳細",
@@ -24,8 +27,8 @@ export default function ServicesPage() {
       <Section className="pb-8 pt-10">
         <PageHero
           eyebrow="Services"
-          title="学会事務局として、日常運用を円滑にサポート"
-          description="学会運営に必要な実務をカテゴリ別に整理し、学会ごとの運営体制に合わせて委託範囲を設計します。すべてを一括ではなく、必要な機能から段階的に導入することも可能です。"
+          title="学会事務局として、日常運用を実務レベルで支援"
+          description="業務内容だけでなく、毎月の成果物と運用サイクルを明確化したうえで委託範囲を設計します。"
           actions={
             <>
               <ButtonLink href="/contact">資料請求</ButtonLink>
@@ -40,13 +43,14 @@ export default function ServicesPage() {
       <Section>
         <SectionHeading
           title="提供業務一覧（6カテゴリ）"
-          description="ご提示いただいた学会事務局業務を、運用しやすいカテゴリに整理して掲載しています。通常運用として継続発生する業務は、月額コアプランの対象として設計しやすい領域です。"
+          description="コア業務3領域を中心に、必要に応じて周辺業務を追加できる設計です。"
         />
         <div className="grid gap-5 lg:grid-cols-2">
           {serviceCategories.map((category) => {
             const Icon = category.icon;
+            const output = serviceOutputs.find((item) => item.title === category.title);
             return (
-              <Card key={category.title} className="p-0 overflow-hidden">
+              <Card key={category.title} className="overflow-hidden p-0">
                 <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
                   <div className="flex flex-wrap items-center gap-3">
                     <div className="rounded-xl bg-white p-2 text-brand-800 ring-1 ring-slate-200">
@@ -70,6 +74,21 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  {output ? (
+                    <div className="mt-4 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3">
+                      <p className="text-xs font-semibold tracking-wide text-brand-900">成果物（アウトプット例）</p>
+                      <ul className="mt-2 flex flex-wrap gap-2">
+                        {output.outputs.map((item) => (
+                          <li
+                            key={item}
+                            className="rounded-full border border-brand-200 bg-white px-3 py-1 text-xs text-slate-700"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
                 </div>
               </Card>
             );
@@ -78,24 +97,26 @@ export default function ServicesPage() {
       </Section>
 
       <Section className="bg-slate-50">
+        <MonthlyCycle />
+      </Section>
+
+      <Section>
         <SectionHeading
           title="単発・スポットでご相談いただける業務"
-          description="料金ページでオプション扱いとしている業務のうち、ご相談が多い単発支援メニューをサービス紹介にも明記しています。総会・年次学術集会の開催支援など、定常事務局とは別枠でのご相談も可能です。"
+          description="総会・年次学術集会の開催や学会誌関連など、非定常業務は必要な時だけ追加できます。"
         />
         <div className="grid gap-5 lg:grid-cols-2">
           {spotServices.map((service) => {
             const Icon = service.icon;
             return (
-              <Card key={service.title} className="p-0 overflow-hidden bg-white">
+              <Card key={service.title} className="overflow-hidden bg-white p-0">
                 <div className="border-b border-slate-200 bg-white px-6 py-4">
                   <div className="flex flex-wrap items-center gap-3">
                     <div className="rounded-xl bg-brand-50 p-2 text-brand-800 ring-1 ring-brand-100">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h2 className="text-lg font-semibold text-slate-900">{service.title}</h2>
-                    <Pill className="ml-auto border-slate-200 bg-slate-100 text-slate-800">
-                      単発オプション対象
-                    </Pill>
+                    <Pill className="ml-auto border-slate-200 bg-slate-100 text-slate-800">単発オプション</Pill>
                   </div>
                 </div>
                 <div className="px-6 py-5">
@@ -119,22 +140,26 @@ export default function ServicesPage() {
 
       <Section className="bg-slate-50">
         <SectionHeading
-          title="役割分担を明確にして、運営の質を保つ"
-          description="学会側の意思決定と、事務局代行が担う日常実務の境界をあらかじめ整理することで、連携ミスや手戻りを減らします。"
+          title="責任分界の基本"
+          description="実務を委託しても、最終責任と意思決定は学会側に残ることを明確化して運用します。"
         />
-        <ResponsibilitySplitDiagram />
+        <div className="mb-6">
+          <ResponsibilitySplitDiagram />
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          {boundaryItems.map((item) => (
+            <div key={item} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
+              {item}
+            </div>
+          ))}
+        </div>
       </Section>
 
       <Section>
         <SectionHeading
-          title="追加対応しやすい周辺業務・運営改善領域"
-          description="学会運営事務局代行の公開サービスでよく見られる周辺業務を踏まえ、当サイトでもご相談の多い項目を整理しています。必要な項目のみ追加し、過不足のない委託設計を行います。"
+          title="追加対応しやすい周辺業務"
+          description="競合サービスで見られる周辺領域も、必要時に段階的に追加できます。"
         />
-        <div className="mb-5">
-          <Pill className="border-slate-200 bg-slate-100 text-slate-800">
-            追加オプション候補
-          </Pill>
-        </div>
         <div className="grid gap-4 md:grid-cols-2">
           {extendedServiceItems.map((item) => (
             <Card key={item.title} className="bg-white">
@@ -142,21 +167,6 @@ export default function ServicesPage() {
               <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
             </Card>
           ))}
-        </div>
-      </Section>
-
-      <Section className="bg-slate-50">
-        <div className="rounded-3xl border border-brand-100 bg-brand-50 p-6 md:p-8">
-          <h2 className="text-xl font-bold text-slate-900">業務範囲は見積前に明確化します</h2>
-          <p className="mt-3 text-sm leading-7 text-slate-600">
-            学会ごとに、会員数、会費体系、会計範囲、委員会頻度、発送量は異なります。ヒアリング時に現状フローを整理し、対応範囲・連携方法・報告形式を明示したうえでお見積を提示します。
-          </p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <ButtonLink href="/contact">相談する</ButtonLink>
-            <ButtonLink href="/flow" variant="secondary">
-              導入の流れを見る
-            </ButtonLink>
-          </div>
         </div>
       </Section>
     </>

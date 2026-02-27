@@ -1,10 +1,13 @@
+import { FAQAccordion } from "@/components/faq-accordion";
 import { PageHero } from "@/components/page-hero";
 import { Section, SectionHeading } from "@/components/section";
 import { ButtonLink, Card } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
 import {
+  estimateCases,
   pricingCoreScope,
   pricingFactors,
+  pricingFaqItems,
   pricingOptionGroups,
   pricingTiers
 } from "@/lib/site-data";
@@ -22,8 +25,8 @@ export default function PricingPage() {
       <Section className="pb-8 pt-10">
         <PageHero
           eyebrow="Pricing"
-          title="料金は「月額コアプラン + オプション」で設計"
-          description="通常運用で発生しやすい会員管理・会計財務・役員会/委員会運営は月額プラン化し、学会誌発行、選挙、HP制作、学術集会対応などの非定常業務はオプションとして切り分けることで、運営実態に合った見積を行います。"
+          title="月額コア + オプションで、過不足のない運営体制へ"
+          description="会員管理・会計財務・役員会/委員会運営を月額コアに集約し、非定常業務をオプション化して最適な見積を行います。"
           actions={<ButtonLink href="/contact">見積依頼をする</ButtonLink>}
         />
       </Section>
@@ -31,11 +34,11 @@ export default function PricingPage() {
       <Section>
         <SectionHeading
           title="月額コアプラン（基本構成）"
-          description="以下は、会員管理・会計財務・役員会/委員会運営を基本にした月額の目安レンジです。最終金額はヒアリング後のお見積となります。"
+          description="会員数に応じた目安レンジです。詳細人数・運用負荷により変動するため、最終金額は個別見積となります。"
         />
         <div className="mb-6 rounded-2xl border border-brand-100 bg-brand-50 p-5">
-          <h3 className="text-sm font-semibold text-brand-900">月額プランに含める基本業務（標準例）</h3>
-          <ul className="mt-3 grid gap-2 md:grid-cols-1">
+          <h3 className="text-sm font-semibold text-brand-900">月額プランに含める基本業務</h3>
+          <ul className="mt-3 grid gap-2">
             {pricingCoreScope.map((item) => (
               <li
                 key={item}
@@ -60,15 +63,12 @@ export default function PricingPage() {
             </Card>
           ))}
         </div>
-        <div className="mt-6 rounded-2xl border border-slate-200 bg-white px-4 py-4 text-sm leading-7 text-slate-700">
-          会員数の詳細（例: 120名 / 280名 / 650名 など）や、会費体系、委員会開催頻度、会計処理範囲によって金額は変動します。詳細なお見積は一度お問い合わせください。
-        </div>
       </Section>
 
       <Section className="bg-slate-50">
         <SectionHeading
           title="オプション料金（従量 / スポット / 月額追加）"
-          description="学会誌発行、HP制作・運用、役員選挙、学術集会関連などは、実施頻度や件数差が大きいためオプションで設定します。"
+          description="学会誌、HP、選挙、総会・年次学術集会などは、実施頻度差が大きいためオプション設定です。"
         />
         <div className="space-y-6">
           {pricingOptionGroups.map((group) => (
@@ -79,35 +79,19 @@ export default function PricingPage() {
                 <table className="min-w-full border-separate border-spacing-0 text-sm">
                   <thead>
                     <tr>
-                      <th className="rounded-tl-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">
-                        項目
-                      </th>
-                      <th className="border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">
-                        課金単位
-                      </th>
-                      <th className="border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">
-                        目安料金
-                      </th>
-                      <th className="rounded-tr-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">
-                        補足
-                      </th>
+                      <th className="rounded-tl-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">項目</th>
+                      <th className="border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">課金単位</th>
+                      <th className="border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">目安料金</th>
+                      <th className="rounded-tr-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">補足</th>
                     </tr>
                   </thead>
                   <tbody>
                     {group.items.map((item) => (
                       <tr key={`${group.category}-${item.name}`}>
-                        <td className="border-x border-b border-slate-200 px-4 py-3 text-slate-800">
-                          {item.name}
-                        </td>
-                        <td className="border-b border-slate-200 px-4 py-3 text-slate-700">
-                          {item.unit}
-                        </td>
-                        <td className="border-b border-slate-200 px-4 py-3 font-medium text-brand-900">
-                          {item.priceRange}
-                        </td>
-                        <td className="border-b border-slate-200 px-4 py-3 text-slate-600">
-                          {item.note}
-                        </td>
+                        <td className="border-x border-b border-slate-200 px-4 py-3 text-slate-800">{item.name}</td>
+                        <td className="border-b border-slate-200 px-4 py-3 text-slate-700">{item.unit}</td>
+                        <td className="border-b border-slate-200 px-4 py-3 font-medium text-brand-900">{item.priceRange}</td>
+                        <td className="border-b border-slate-200 px-4 py-3 text-slate-600">{item.note}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -121,18 +105,9 @@ export default function PricingPage() {
                   >
                     <p className="text-sm font-semibold text-slate-900">{item.name}</p>
                     <dl className="mt-3 space-y-2 text-sm">
-                      <div className="grid grid-cols-[80px_1fr] gap-2">
-                        <dt className="text-slate-500">課金単位</dt>
-                        <dd className="text-slate-700">{item.unit}</dd>
-                      </div>
-                      <div className="grid grid-cols-[80px_1fr] gap-2">
-                        <dt className="text-slate-500">目安料金</dt>
-                        <dd className="font-medium text-brand-900">{item.priceRange}</dd>
-                      </div>
-                      <div className="grid grid-cols-[80px_1fr] gap-2">
-                        <dt className="text-slate-500">補足</dt>
-                        <dd className="text-slate-600">{item.note}</dd>
-                      </div>
+                      <div className="grid grid-cols-[80px_1fr] gap-2"><dt className="text-slate-500">課金単位</dt><dd className="text-slate-700">{item.unit}</dd></div>
+                      <div className="grid grid-cols-[80px_1fr] gap-2"><dt className="text-slate-500">目安料金</dt><dd className="font-medium text-brand-900">{item.priceRange}</dd></div>
+                      <div className="grid grid-cols-[80px_1fr] gap-2"><dt className="text-slate-500">補足</dt><dd className="text-slate-600">{item.note}</dd></div>
                     </dl>
                   </div>
                 ))}
@@ -145,42 +120,57 @@ export default function PricingPage() {
       <Section>
         <SectionHeading
           title="見積変動要素"
-          description="以下の条件をもとに、体制・運用フロー・対応工数を算出してお見積を提示します。"
+          description="運用条件ごとに必要工数が変わるため、以下を基準に見積を算出します。"
         />
-        <div className="grid gap-3 md:grid-cols-2">
-          {pricingFactors.map((factor) => (
-            <div
-              key={factor}
-              className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700"
-            >
-              {factor}
-            </div>
+        <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+          <table className="min-w-full text-sm">
+            <thead className="bg-slate-50 text-left text-slate-900">
+              <tr>
+                <th className="px-4 py-3 font-semibold">要素</th>
+                <th className="px-4 py-3 font-semibold">見積への影響</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pricingFactors.map((factor) => (
+                <tr key={factor} className="border-t border-slate-200">
+                  <td className="px-4 py-3 text-slate-800">{factor}</td>
+                  <td className="px-4 py-3 text-slate-600">対応頻度・難易度・体制規模が変動</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Section>
+
+      <Section className="bg-slate-50">
+        <SectionHeading title="見積例" description="実際の見積イメージ（架空例）です。" />
+        <div className="grid gap-4 md:grid-cols-2">
+          {estimateCases.map((item) => (
+            <Card key={item.title} className="bg-white">
+              <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
+              <p className="mt-2 text-sm font-medium text-brand-900">{item.result}</p>
+              <p className="mt-2 text-sm text-slate-600">{item.point}</p>
+            </Card>
           ))}
         </div>
-        <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-7 text-amber-900">
-          価格はあくまで目安です。月額コアプラン + オプションの組み合わせで、学会運営の継続性と透明性を担保しつつ、過不足のない個別見積をご提示します。
-        </div>
+      </Section>
+
+      <Section>
+        <SectionHeading title="料金に関するFAQ" />
+        <FAQAccordion items={pricingFaqItems} />
       </Section>
 
       <Section className="bg-slate-50">
         <div className="rounded-3xl border border-brand-200 bg-brand-900 p-6 text-white md:p-8">
           <h2 className="text-xl font-bold">見積依頼・相談</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-brand-100">
-            現在の運営体制（会員数、会計運用、委員会頻度、発送物）を共有いただければ、実行可能な運営委託プランをご提案します。
+            会員数や運営体制を共有いただければ、月額コアとオプションの最適な組み合わせをご提案します。
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <ButtonLink
-              href="/contact"
-              variant="secondary"
-              className="!border-white !bg-white !text-brand-900 hover:!bg-brand-50"
-            >
+            <ButtonLink href="/contact" variant="secondary" className="!border-white !bg-white !text-brand-900 hover:!bg-brand-50">
               見積依頼フォームへ
             </ButtonLink>
-            <ButtonLink
-              href="/services"
-              variant="secondary"
-              className="border-white/40 bg-white/10 text-white hover:bg-white/20"
-            >
+            <ButtonLink href="/services" variant="secondary" className="border-white/40 bg-white/10 text-white hover:bg-white/20">
               対応業務を確認する
             </ButtonLink>
           </div>

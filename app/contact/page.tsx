@@ -40,6 +40,7 @@ export default function ContactPage() {
             <div className="rounded-3xl border border-brand-100 bg-brand-50 p-6">
               <h2 className="text-sm font-semibold text-brand-900">連絡先</h2>
               <p className="mt-2 text-sm text-slate-700">Email: {siteConfig.email}</p>
+              <p className="mt-1 text-sm text-slate-700">TEL: 03-1234-5678</p>
               <p className="mt-1 text-sm text-slate-700">受付時間: 平日 9:00-18:00</p>
             </div>
           </aside>
