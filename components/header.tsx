@@ -18,7 +18,7 @@ export function Header() {
           <div className="text-sm font-semibold text-slate-900">
             がっかりさせない学会
           </div>
-          <div className="text-xs text-slate-500">学会運営代行（学会事務局代行）</div>
+          <div className="text-xs text-slate-500">学会事務局代行</div>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
