@@ -65,7 +65,7 @@ export function Header() {
 
         <div className="flex items-center gap-2 md:hidden">
           <ButtonLink href="/contact" className="h-9 px-3 text-xs">
-            相談
+            資料請求・見積依頼
           </ButtonLink>
           <details>
             <summary className="list-none rounded-lg border border-slate-200 p-2 text-slate-700 marker:content-none">

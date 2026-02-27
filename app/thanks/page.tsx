@@ -30,9 +30,6 @@ export default function ThanksPage() {
             <ButtonLink href="/samples" variant="secondary">
               サンプル資料を見る
             </ButtonLink>
-            <ButtonLink href="/contact" variant="secondary">
-              30分相談を予約（ダミー）
-            </ButtonLink>
             <ButtonLink href="/">トップへ戻る</ButtonLink>
             <ButtonLink href="/services" variant="secondary">
               サービス詳細を見る

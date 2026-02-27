@@ -45,9 +45,6 @@ export default function HomePage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <ButtonLink href="/contact">資料請求・見積依頼</ButtonLink>
-                <ButtonLink href="/contact" variant="secondary">
-                  30分相談を予約
-                </ButtonLink>
               </div>
               <div className="mt-5">
                 <TrustBadges />
@@ -198,6 +195,11 @@ export default function HomePage() {
       </Section>
 
       <Section className="pt-4">
+        <SectionHeading
+          eyebrow="Voice"
+          title="お客様の声"
+          description="導入後にいただいた評価の一部をご紹介します。"
+        />
         <div className="grid gap-4 md:grid-cols-2">
           <TestimonialCard
             title="運営担当の引継ぎ負荷が軽くなった"
