@@ -53,7 +53,9 @@ export default function PricingPage() {
                 <p className="text-sm font-semibold text-brand-900">{tier.name}</p>
                 <p className="mt-1 text-sm text-slate-700">{tier.members}</p>
               </div>
-              <p className="mt-4 text-2xl font-bold text-slate-900">{tier.price}</p>
+              <p className="mt-4 whitespace-nowrap text-2xl font-bold text-slate-900 sm:text-3xl">
+                {tier.price}
+              </p>
               <p className="mt-3 text-sm leading-7 text-slate-600">{tier.note}</p>
             </Card>
           ))}
@@ -73,7 +75,7 @@ export default function PricingPage() {
             <Card key={group.category} className="bg-white">
               <h3 className="text-base font-semibold text-slate-900">{group.category}</h3>
               <p className="mt-2 text-sm leading-7 text-slate-600">{group.description}</p>
-              <div className="mt-4 overflow-x-auto">
+              <div className="mt-4 hidden overflow-x-auto md:block">
                 <table className="min-w-full border-separate border-spacing-0 text-sm">
                   <thead>
                     <tr>
@@ -111,6 +113,30 @@ export default function PricingPage() {
                   </tbody>
                 </table>
               </div>
+              <div className="mt-4 grid gap-3 md:hidden">
+                {group.items.map((item) => (
+                  <div
+                    key={`${group.category}-${item.name}-mobile`}
+                    className="rounded-xl border border-slate-200 bg-slate-50 p-4"
+                  >
+                    <p className="text-sm font-semibold text-slate-900">{item.name}</p>
+                    <dl className="mt-3 space-y-2 text-sm">
+                      <div className="grid grid-cols-[80px_1fr] gap-2">
+                        <dt className="text-slate-500">課金単位</dt>
+                        <dd className="text-slate-700">{item.unit}</dd>
+                      </div>
+                      <div className="grid grid-cols-[80px_1fr] gap-2">
+                        <dt className="text-slate-500">目安料金</dt>
+                        <dd className="font-medium text-brand-900">{item.priceRange}</dd>
+                      </div>
+                      <div className="grid grid-cols-[80px_1fr] gap-2">
+                        <dt className="text-slate-500">補足</dt>
+                        <dd className="text-slate-600">{item.note}</dd>
+                      </div>
+                    </dl>
+                  </div>
+                ))}
+              </div>
             </Card>
           ))}
         </div>
@@ -146,7 +172,7 @@ export default function PricingPage() {
             <ButtonLink
               href="/contact"
               variant="secondary"
-              className="border-white bg-white text-brand-900 hover:bg-brand-50"
+              className="!border-white !bg-white !text-brand-900 hover:!bg-brand-50"
             >
               見積依頼フォームへ
             </ButtonLink>

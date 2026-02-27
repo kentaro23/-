@@ -20,7 +20,7 @@ export function CtaBanner({
           <ButtonLink
             href="/contact"
             variant="secondary"
-            className="border-white bg-white text-brand-900 hover:bg-brand-50"
+            className="!border-white !bg-white !text-brand-900 hover:!bg-brand-50"
           >
             資料請求・見積依頼
           </ButtonLink>

@@ -18,7 +18,7 @@ export function ButtonLink({
     <Link
       {...props}
       className={cn(
-        "inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2",
+        "inline-flex items-center justify-center whitespace-nowrap rounded-xl px-5 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2",
         variant === "primary" &&
           "bg-brand-800 text-white hover:bg-brand-900 shadow-soft",
         variant === "secondary" &&
