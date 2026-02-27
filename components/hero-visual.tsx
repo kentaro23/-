@@ -19,7 +19,7 @@ export function HeroVisual({
   return (
     <div className={className} aria-hidden="true">
       <Image
-        src={`/assets/hero/${name}.svg`}
+        src={name === "home" ? "/assets/hero/home.jpg" : `/assets/hero/${name}.svg`}
         alt=""
         width={640}
         height={420}
