@@ -66,7 +66,11 @@ export default function ServicesPage() {
                 </div>
                 <div className="px-6 py-5">
                   <Image
-                    src={`/assets/illustrations/service-${(serviceCategories.indexOf(category) % 6) + 1}.svg`}
+                    src={
+                    category.title === "文書・発送・一次窓口"
+                      ? "/assets/illustrations/Gemini_Generated_Image_ne1wl3ne1wl3ne1w.png"
+                      : `/assets/illustrations/service-${(serviceCategories.indexOf(category) % 6) + 1}.svg`
+                  }
                     alt=""
                     width={320}
                     height={180}
