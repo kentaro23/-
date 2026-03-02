@@ -114,15 +114,15 @@ export default function HomePage() {
                 <Image
                   src={
                     category.title === "会員管理"
-                      ? "/assets/illustrations/top-members.png"
+                      ? "/assets/illustrations/Gemini_Generated_Image_qx18y0qx18y0qx18.png"
                       : category.title === "選挙・法人運営"
-                      ? "/assets/illustrations/top-election-corp.png"
+                      ? "/assets/illustrations/Gemini_Generated_Image_km7jj5km7jj5km7j.png"
                       : category.title === "役員会・委員会運営"
-                        ? "/assets/illustrations/top-board-committee.png"
+                        ? "/assets/illustrations/Gemini_Generated_Image_km7jj5km7jj5km7j-3.png"
                         : category.title === "資産管理・アーカイブ"
-                          ? "/assets/illustrations/top-archive.png"
+                          ? "/assets/illustrations/Gemini_Generated_Image_ibyw5fibyw5fibyw.png"
                           : category.title === "会計財務"
-                            ? "/assets/illustrations/top-finance.png"
+                            ? "/assets/illustrations/Gemini_Generated_Image_ezgs08ezgs08ezgs.png"
                             : category.title === "文書・発送・一次窓口"
                               ? "/assets/illustrations/Gemini_Generated_Image_ne1wl3ne1wl3ne1w.png"
                               : `/assets/illustrations/service-${(serviceCategories.indexOf(category) % 6) + 1}.svg`
