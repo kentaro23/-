@@ -67,7 +67,9 @@ export default function ServicesPage() {
                 <div className="px-6 py-5">
                   <Image
                     src={
-                      category.title === "選挙・法人運営"
+                      category.title === "会員管理"
+                        ? "/assets/illustrations/top-members.png"
+                        : category.title === "選挙・法人運営"
                         ? "/assets/illustrations/top-election-corp.png"
                         : category.title === "役員会・委員会運営"
                           ? "/assets/illustrations/top-board-committee.png"
@@ -75,9 +77,9 @@ export default function ServicesPage() {
                             ? "/assets/illustrations/top-archive.png"
                             : category.title === "会計財務"
                               ? "/assets/illustrations/top-finance.png"
-                          : category.title === "文書・発送・一次窓口"
-                            ? "/assets/illustrations/Gemini_Generated_Image_ne1wl3ne1wl3ne1w.png"
-                            : `/assets/illustrations/service-${(serviceCategories.indexOf(category) % 6) + 1}.svg`
+                              : category.title === "文書・発送・一次窓口"
+                                ? "/assets/illustrations/Gemini_Generated_Image_ne1wl3ne1wl3ne1w.png"
+                                : `/assets/illustrations/service-${(serviceCategories.indexOf(category) % 6) + 1}.svg`
                     }
                     alt=""
                     width={320}
