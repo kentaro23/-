@@ -5,7 +5,7 @@ import { buildMetadata, siteConfig } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "プライバシーポリシー",
   path: "/privacy",
-  description: "がっかりさせない学会（学会運営代行）のプライバシーポリシー雛形です。"
+  description: "がっかりさせない学会（学会運営代行）のプライバシーポリシーです。"
 });
 
 const sections = [
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
         <PageHero
           eyebrow="Privacy Policy"
           title="プライバシーポリシー"
-          description="以下は、がっかりさせない学会（学会運営代行）のプライバシーポリシー雛形です。実運用時には、事業者情報・安全管理措置・委託先等の実態に合わせて更新してください。"
+          description="以下は、がっかりさせない学会（学会運営代行）のプライバシーポリシーです。事業者情報・安全管理措置・委託先等の実態に合わせて運用します。"
           visual="privacy"
         />
       </Section>

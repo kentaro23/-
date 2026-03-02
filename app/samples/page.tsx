@@ -27,7 +27,7 @@ export default function SamplesPage() {
       <Section className="texture-dots">
         <SectionHeading
           title="代表サンプル"
-          description="以下はダミーのイメージです。学会ごとの運用に合わせて形式を調整します。"
+          description="以下は成果物イメージです。学会ごとの運用に合わせて形式を調整します。"
         />
         <div className="space-y-5">
           {sampleArtifacts.map((artifact) => (
