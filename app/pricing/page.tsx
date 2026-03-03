@@ -27,7 +27,7 @@ export default function PricingPage() {
         <PageHero
           eyebrow="Pricing"
           title="月額コア + オプションで、過不足のない運営体制へ"
-          description="会員管理・会計財務を月額コアに集約し、役員会/委員会運営や非定常業務をオプション化して最適な見積を行います。"
+          description="会員管理・会費徴収/督促を月額コアに集約し、役員会/委員会運営や公認会計士が必要な業務、非定常業務をオプション化して最適な見積を行います。"
           visual="pricing"
           actions={<ButtonLink href="/contact">見積依頼をする</ButtonLink>}
         />
