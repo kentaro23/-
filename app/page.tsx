@@ -42,7 +42,7 @@ export default function HomePage() {
                 品質で選べる状態へ。
               </h1>
               <p className="mt-4 max-w-2xl text-body">
-                がっかりさせない学会は、会員管理・会計財務・役員会運営を中心に、学会運営実務を継続支援します。先生方は意思決定と学術活動に集中し、運営負荷を平準化できます。
+                がっかりさせない学会は、会員管理・会計財務を中心に、役員会運営を含む学会運営実務を継続支援します。先生方は意思決定と学術活動に集中し、運営負荷を平準化できます。
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <ButtonLink href="/contact">資料請求・見積依頼</ButtonLink>

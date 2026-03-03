@@ -13,7 +13,7 @@ import {
   spotServices
 } from "@/lib/site-data";
 
-const coreCategoryTitles = new Set(["会員管理", "会計財務", "役員会・委員会運営"]);
+const coreCategoryTitles = new Set(["会員管理", "会計財務"]);
 
 export const metadata = buildMetadata({
   title: "サービス詳細",
@@ -45,7 +45,7 @@ export default function ServicesPage() {
       <Section className="texture-dots">
         <SectionHeading
           title="提供業務一覧（6カテゴリ）"
-          description="コア業務3領域を中心に、必要に応じて周辺業務を追加できる設計です。"
+          description="コア業務2領域を中心に、必要に応じて周辺業務を追加できる設計です。"
         />
         <div className="grid gap-5 lg:grid-cols-2">
           {serviceCategories.map((category) => {

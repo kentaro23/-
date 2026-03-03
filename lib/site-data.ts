@@ -215,8 +215,7 @@ export const pricingTiers = [
 
 export const pricingCoreScope = [
   "会員管理（入退会・会員情報更新・年会費管理の基本運用）",
-  "会計財務（出納管理、月次レポート、請求/支払実務の基本対応）",
-  "役員会・委員会運営（開催案内、日程調整、資料取りまとめの基本対応）"
+  "会計財務（出納管理、月次レポート、請求/支払実務の基本対応）"
 ] as const;
 
 export const pricingOptionGroups = [
@@ -281,6 +280,12 @@ export const pricingOptionGroups = [
     description:
       "競合各社で見られる周辺業務を、必要な時だけ追加可能な構成にしています。",
     items: [
+      {
+        name: "役員会・委員会運営支援",
+        unit: "月額 / 1回",
+        priceRange: "月3万〜12万円 / 1回2万〜8万円",
+        note: "開催頻度、案内範囲、資料作成範囲、議事録支援の有無で変動"
+      },
       {
         name: "問い合わせ窓口強化（電話+メール一次対応）",
         unit: "月額",
@@ -422,8 +427,8 @@ export const estimateCases = [
   },
   {
     title: "ケースB: 会員820名 / 委員会月2回",
-    result: "月額コア 8.0万円 + 役員選挙対応（年1回）",
-    point: "問い合わせ窓口と選挙を追加し、繁忙期の負荷を平準化"
+    result: "月額コア 8.0万円 + 役員会・委員会運営支援（月2回）",
+    point: "会議運営をオプション化し、開催頻度に応じた工数で最適化"
   }
 ] as const;
 
