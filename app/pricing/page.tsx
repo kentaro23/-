@@ -1,7 +1,9 @@
 import { FAQAccordion } from "@/components/faq-accordion";
+import { OptionCard } from "@/components/option-card";
 import { PageHero } from "@/components/page-hero";
 import { Section, SectionHeading } from "@/components/section";
 import { ButtonLink, Card } from "@/components/ui";
+import { optionCards } from "@/content/options";
 import { Coins, Layers3, Landmark } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
 import {
@@ -68,6 +70,18 @@ export default function PricingPage() {
               </p>
               <p className="mt-3 text-sm leading-7 text-slate-600">{tier.note}</p>
             </Card>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-slate-50 texture-mesh">
+        <SectionHeading
+          title="オプション"
+          description="月額コアとは別枠で、必要な機能を追加できます。"
+        />
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {optionCards.map((option) => (
+            <OptionCard key={option.id} option={option} />
           ))}
         </div>
       </Section>

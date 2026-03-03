@@ -8,10 +8,12 @@ import {
 import { CtaBanner } from "@/components/cta-banner";
 import { HeroVisual } from "@/components/hero-visual";
 import { ResponsibilitySplitDiagram } from "@/components/diagrams";
+import { OptionCard } from "@/components/option-card";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { TrustBadges } from "@/components/trust-badges";
 import { Section, SectionHeading } from "@/components/section";
 import { ButtonLink, Card, Pill, StatCard } from "@/components/ui";
+import { officeSetupOption } from "@/content/options";
 import { buildMetadata } from "@/lib/metadata";
 import {
   challenges,
@@ -149,6 +151,9 @@ export default function HomePage() {
               {item}
             </Pill>
           ))}
+        </div>
+        <div className="mt-4 max-w-2xl">
+          <OptionCard option={officeSetupOption} compact />
         </div>
       </Section>
 

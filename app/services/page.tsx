@@ -1,9 +1,11 @@
 import { ResponsibilitySplitDiagram } from "@/components/diagrams";
 import { MonthlyCycle } from "@/components/monthly-cycle";
+import { OptionCard } from "@/components/option-card";
 import { PageHero } from "@/components/page-hero";
 import Image from "next/image";
 import { Section, SectionHeading } from "@/components/section";
 import { ButtonLink, Card, Pill } from "@/components/ui";
+import { optionCards } from "@/content/options";
 import { buildMetadata } from "@/lib/metadata";
 import {
   boundaryItems,
@@ -189,6 +191,18 @@ export default function ServicesPage() {
               <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
               <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
             </Card>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-slate-50 texture-mesh">
+        <SectionHeading
+          title="オプション対応"
+          description="事務局機能の拡張が必要な場合は、個別に追加できます。"
+        />
+        <div className="grid gap-4 md:grid-cols-2">
+          {optionCards.map((option) => (
+            <OptionCard key={option.id} option={option} />
           ))}
         </div>
       </Section>
