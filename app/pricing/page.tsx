@@ -2,7 +2,7 @@ import { FAQAccordion } from "@/components/faq-accordion";
 import { OptionCard } from "@/components/option-card";
 import { PageHero } from "@/components/page-hero";
 import { Section, SectionHeading } from "@/components/section";
-import { ButtonLink, Card } from "@/components/ui";
+import { ButtonLink, Card, Pill } from "@/components/ui";
 import { optionCards } from "@/content/options";
 import { Coins, Layers3, Landmark } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
@@ -84,52 +84,24 @@ export default function PricingPage() {
             <OptionCard key={option.id} option={option} />
           ))}
         </div>
-      </Section>
-
-      <Section className="bg-slate-50 texture-mesh">
-        <SectionHeading
-          title="オプション料金（従量 / スポット / 月額追加）"
-          description="学会誌、HP、選挙、総会・年次学術集会などは、実施頻度差が大きいためオプション設定です。"
-        />
-        <div className="space-y-6">
+        <div className="mt-6 space-y-6">
           {pricingOptionGroups.map((group) => (
             <Card key={group.category} className="bg-white">
               <h3 className="text-base font-semibold text-slate-900">{group.category}</h3>
               <p className="mt-2 text-sm leading-7 text-slate-600">{group.description}</p>
-              <div className="mt-4 hidden overflow-x-auto md:block">
-                <table className="min-w-full border-separate border-spacing-0 text-sm">
-                  <thead>
-                    <tr>
-                      <th className="rounded-tl-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">項目</th>
-                      <th className="border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">課金単位</th>
-                      <th className="border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">目安料金</th>
-                      <th className="rounded-tr-xl border border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">補足</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {group.items.map((item) => (
-                      <tr key={`${group.category}-${item.name}`}>
-                        <td className="border-x border-b border-slate-200 px-4 py-3 text-slate-800">{item.name}</td>
-                        <td className="border-b border-slate-200 px-4 py-3 text-slate-700">{item.unit}</td>
-                        <td className="border-b border-slate-200 px-4 py-3 font-medium text-brand-900">{item.priceRange}</td>
-                        <td className="border-b border-slate-200 px-4 py-3 text-slate-600">{item.note}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className="mt-4 grid gap-3 md:hidden">
+              <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
                 {group.items.map((item) => (
                   <div
-                    key={`${group.category}-${item.name}-mobile`}
-                    className="rounded-xl border border-slate-200 bg-slate-50 p-4"
+                    key={`${group.category}-${item.name}`}
+                    className="rounded-2xl border border-brand-100 bg-white p-4 shadow-panel"
                   >
-                    <p className="text-sm font-semibold text-slate-900">{item.name}</p>
-                    <dl className="mt-3 space-y-2 text-sm">
-                      <div className="grid grid-cols-[80px_1fr] gap-2"><dt className="text-slate-500">課金単位</dt><dd className="text-slate-700">{item.unit}</dd></div>
-                      <div className="grid grid-cols-[80px_1fr] gap-2"><dt className="text-slate-500">目安料金</dt><dd className="font-medium text-brand-900">{item.priceRange}</dd></div>
-                      <div className="grid grid-cols-[80px_1fr] gap-2"><dt className="text-slate-500">補足</dt><dd className="text-slate-600">{item.note}</dd></div>
-                    </dl>
+                    <div className="flex items-center gap-2">
+                      <Pill className="border-brand-200 bg-brand-50 text-brand-900">Option</Pill>
+                      <p className="text-sm font-semibold text-slate-900">{item.name}</p>
+                    </div>
+                    <p className="mt-3 text-lg font-bold text-brand-900">{item.priceRange}</p>
+                    <p className="mt-1 text-sm text-slate-600">課金単位: {item.unit}</p>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.note}</p>
                   </div>
                 ))}
               </div>
