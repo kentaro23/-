@@ -215,7 +215,7 @@ export const pricingTiers = [
 
 export const pricingCoreScope = [
   "会員管理（入退会・会員情報更新・年会費管理の基本運用）",
-  "会計財務（年会費徴収・督促・入金確認/消込の基本対応）"
+  "会費徴収・督促管理（年会費徴収・督促・入金確認/消込の基本対応）"
 ] as const;
 
 export const pricingOptionGroups = [
