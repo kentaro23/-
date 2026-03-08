@@ -42,9 +42,7 @@ export default function HomePage() {
                 医療・学術向け / 常設事務局の外部化（BPO）
               </Pill>
               <h1 className="mt-5 text-3xl font-bold text-white md:text-5xl">
-                学会事務局代行を、
-                <br />
-                品質で選べる状態へ。
+                がっかりさせない学会
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80 md:text-base">
                 がっかりさせない学会は、会員管理・会費徴収/督促を中心に、役員会運営を含む学会運営実務を継続支援します。先生方は意思決定と学術活動に集中し、運営負荷を平準化できます。

@@ -30,15 +30,13 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all",
-        isCompact
-          ? "border-b border-brand-200 bg-white/92 shadow-panel backdrop-blur-md"
-          : "bg-transparent"
+        "sticky top-0 z-50 border-b border-brand-200 bg-white/96 backdrop-blur-md transition-all",
+        isCompact ? "shadow-panel" : ""
       )}
     >
       <div className={cn("mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6", isCompact ? "h-16" : "h-20")}>
         <Link href="/" className="no-underline" aria-label="トップページへ戻る">
-          <MediformaLogo inverted={!isCompact} />
+          <MediformaLogo />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -48,9 +46,7 @@ export function Header() {
               href={item.href}
               className={cn(
                 "rounded-lg px-3 py-2 text-sm no-underline",
-                isCompact
-                  ? "text-brand-700 hover:bg-brand-100 hover:text-brand-800"
-                  : "text-white/90 hover:bg-white/10 hover:text-white"
+                "text-brand-700 hover:bg-brand-100 hover:text-brand-800"
               )}
             >
               {item.label}
@@ -70,9 +66,7 @@ export function Header() {
             onClick={() => setMenuOpen((prev) => !prev)}
             className={cn(
               "rounded-lg border p-2",
-              isCompact
-                ? "border-brand-200 bg-white text-brand-800"
-                : "border-white/40 bg-white/10 text-white"
+              "border-brand-200 bg-white text-brand-800"
             )}
             aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
             aria-expanded={menuOpen}
