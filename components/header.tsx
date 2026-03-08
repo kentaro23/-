@@ -34,7 +34,7 @@ export function Header() {
         isCompact ? "shadow-panel" : ""
       )}
     >
-      <div className={cn("mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6", isCompact ? "h-16" : "h-20")}>
+      <div className={cn("mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6", isCompact ? "h-20" : "h-24")}>
         <Link href="/" className="no-underline" aria-label="トップページへ戻る">
           <MediformaLogo />
         </Link>

@@ -3,28 +3,32 @@ import { cn } from "@/lib/utils";
 
 export function MediformaLogo({
   inverted = false,
+  subLabel,
   className
 }: {
   inverted?: boolean;
+  subLabel?: string;
   className?: string;
 }) {
   return (
-    <div className={cn("flex items-center gap-3", className)}>
+    <div className={cn("flex items-center gap-4", className)}>
       <Image
         src="/assets/mediforma_logo_only.svg"
         alt="Mediforma logo"
-        width={60}
-        height={60}
-        className={cn("h-11 w-11 rounded-lg object-contain", inverted && "bg-white p-1.5")}
+        width={80}
+        height={80}
+        className={cn("h-14 w-14 rounded-lg object-contain md:h-16 md:w-16", inverted && "bg-white p-1.5")}
         priority
       />
-      <div className="min-w-0">
-        <p className={cn("font-en text-xl font-bold leading-6", inverted ? "text-white" : "text-brand-800")}>
+      <div className="min-w-0 self-center">
+        <p className={cn("font-en text-3xl font-bold leading-none md:text-4xl", inverted ? "text-white" : "text-brand-800")}>
           Mediforma Society
         </p>
-        <p className={cn("text-sm leading-5", inverted ? "text-brand-100" : "text-brand-500")}>
-          学会事務局代行
-        </p>
+        {subLabel ? (
+          <p className={cn("mt-1 text-sm leading-5", inverted ? "text-brand-100" : "text-brand-500")}>
+            {subLabel}
+          </p>
+        ) : null}
       </div>
     </div>
   );
