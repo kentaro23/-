@@ -169,7 +169,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="inline-flex items-center justify-center rounded-2xl bg-brand-800 px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-70"
+        className="inline-flex items-center justify-center rounded-2xl bg-accent-500 px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-accent-400 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isPending ? "送信中..." : "送信する"}
       </button>
@@ -207,9 +207,9 @@ function Field({
 function inputClass(hasError: boolean) {
   return [
     "w-full rounded-2xl border bg-white px-4 py-3 text-sm text-slate-900 outline-none transition duration-200",
-    "placeholder:text-slate-400 focus:ring-2 focus:ring-brand-200",
+    "placeholder:text-slate-400 focus:ring-2 focus:ring-accent-300",
     hasError
       ? "border-red-300 focus:border-red-400"
-      : "border-slate-300 focus:border-brand-500 hover:border-brand-200"
+      : "border-slate-300 focus:border-accent-500 hover:border-accent-300"
   ].join(" ");
 }

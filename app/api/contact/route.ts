@@ -57,7 +57,7 @@ export async function POST(request: Request) {
     });
 
     const lines = [
-      "学会運営代行サイトからお問い合わせが届きました。",
+      "Mediforma Society サイトからお問い合わせが届きました。",
       "",
       `団体名: ${parsed.data.organization}`,
       `担当者名: ${parsed.data.name}`,
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
     ];
 
     await transporter.sendMail({
-      from: `"がっかりさせない学会" <${mailConfig.user}>`,
+      from: `"Mediforma Society" <${mailConfig.user}>`,
       to: siteConfig.email,
       replyTo: parsed.data.email,
       subject: `【お問い合わせ】${parsed.data.organization} / ${parsed.data.name}`,
@@ -97,10 +97,10 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
-      from: `"がっかりさせない学会" <${mailConfig.user}>`,
+      from: `"Mediforma Society" <${mailConfig.user}>`,
       to: parsed.data.email,
       replyTo: siteConfig.email,
-      subject: "【受付確認】お問い合わせを受け付けました（がっかりさせない学会）",
+      subject: "【受付確認】お問い合わせを受け付けました（Mediforma Society）",
       text: [
         `${parsed.data.name} 様`,
         "",

@@ -25,14 +25,14 @@ export default function ContactPage() {
 
       <Section className="pt-0 texture-dots">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+          <div className="rounded-3xl border border-brand-200 bg-white p-6 shadow-sm md:p-8">
             <ContactForm />
           </div>
           <aside className="space-y-4">
-            <div className="rounded-3xl border border-slate-200 bg-white p-4">
+            <div className="rounded-3xl border border-brand-200 bg-white p-4">
               <HeroVisual name="contact" />
             </div>
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <div className="rounded-3xl border border-brand-200 bg-brand-50 p-6">
               <h2 className="text-sm font-semibold text-slate-900">ご相談時にあるとスムーズな情報</h2>
               <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-600">
                 <li>・会員数と会費体系</li>
@@ -42,10 +42,10 @@ export default function ContactPage() {
                 <li>・優先して委託したい業務</li>
               </ul>
             </div>
-            <div className="rounded-3xl border border-brand-100 bg-brand-50 p-6">
+            <div className="rounded-3xl border border-accent-300 bg-accent-100 p-6">
               <h2 className="text-sm font-semibold text-brand-900">連絡先</h2>
               <p className="mt-2 text-sm text-slate-700">Email: {siteConfig.email}</p>
-              <p className="mt-1 text-sm text-slate-700">TEL: 03-1234-5678</p>
+              <p className="mt-1 text-sm text-slate-700">TEL: 080-9322-6024</p>
               <p className="mt-1 text-sm text-slate-700">受付時間: 平日 9:00-18:00</p>
             </div>
           </aside>

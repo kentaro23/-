@@ -15,9 +15,9 @@ export function TrustBadges() {
         return (
           <span
             key={item.text}
-            className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3 py-1.5 text-xs font-medium text-brand-900"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-medium text-white"
           >
-            <Icon className="h-3.5 w-3.5 text-accent-700" aria-hidden="true" />
+            <Icon className="h-3.5 w-3.5 text-accent-300" aria-hidden="true" />
             {item.text}
           </span>
         );

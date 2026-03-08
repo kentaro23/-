@@ -9,31 +9,55 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "mf-navy": {
+          950: "#0B1220",
+          900: "#111D32",
+          800: "#13223D",
+          700: "#1C3254"
+        },
+        "mf-teal": {
+          100: "#E0F5F4",
+          300: "#5CD6D6",
+          400: "#2ABFBF",
+          500: "#1F9993"
+        },
+        "mf-gray": {
+          50: "#F8F9FB",
+          100: "#F0F2F5",
+          200: "#E2E5EA",
+          400: "#8A9DB5",
+          500: "#5A6B80",
+          600: "#3D4F63"
+        },
         brand: {
-          50: "#f1f7fb",
-          100: "#dcebf6",
-          200: "#bad8ec",
-          300: "#8dbde0",
-          400: "#5c9bce",
-          500: "#3e82b6",
-          600: "#2f6998",
-          700: "#27537a",
-          800: "#223f5e",
-          900: "#1d3350"
+          50: "#F8F9FB",
+          100: "#F0F2F5",
+          200: "#E2E5EA",
+          300: "#C8D0DB",
+          400: "#8A9DB5",
+          500: "#5A6B80",
+          600: "#3D4F63",
+          700: "#1C3254",
+          800: "#13223D",
+          900: "#0B1220"
         },
         accent: {
-          50: "#ecfdfa",
-          100: "#d2f8f0",
-          200: "#a8efe1",
-          300: "#72e2cf",
-          400: "#3acab5",
-          500: "#1fb19f",
-          600: "#178f83",
-          700: "#177369",
-          800: "#175c55",
-          900: "#174c47"
+          50: "#EAF8F7",
+          100: "#E0F5F4",
+          200: "#BCEBE8",
+          300: "#5CD6D6",
+          400: "#2ABFBF",
+          500: "#1F9993",
+          600: "#1A7D78",
+          700: "#145F5C",
+          800: "#114C49",
+          900: "#0D3C3A"
         },
         slateInk: "#0f172a"
+      },
+      fontFamily: {
+        sans: ["Poppins", "Noto Sans JP", "sans-serif"],
+        jp: ["Noto Sans JP", "sans-serif"]
       },
       boxShadow: {
         soft: "0 10px 30px rgba(15, 23, 42, 0.08)",
@@ -44,7 +68,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-grid":
-          "radial-gradient(circle at 1px 1px, rgba(34,63,94,0.12) 1px, transparent 0)"
+          "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.14) 1px, transparent 0)"
       }
     }
   },

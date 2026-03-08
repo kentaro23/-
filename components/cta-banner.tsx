@@ -8,7 +8,7 @@ export function CtaBanner({
   description?: string;
 }) {
   return (
-    <div className="rounded-3xl border border-brand-800 bg-brand-900 p-6 text-white shadow-panel md:p-8">
+    <div className="rounded-3xl border border-brand-800 bg-gradient-to-br from-brand-900 to-brand-700 p-6 text-white shadow-panel md:p-8">
       <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <h3 className="text-xl font-bold md:text-2xl">{title}</h3>
@@ -17,11 +17,7 @@ export function CtaBanner({
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <ButtonLink
-            href="/contact"
-            variant="secondary"
-            className="!border-white !bg-white !text-brand-900 hover:!bg-brand-50"
-          >
+          <ButtonLink href="/contact">
             資料請求・見積依頼
           </ButtonLink>
         </div>

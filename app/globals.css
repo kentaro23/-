@@ -4,10 +4,21 @@
 
 :root {
   color-scheme: light;
-  --bg: #f8fbfd;
-  --surface: #ffffff;
-  --ink: #0f172a;
-  --muted: #475569;
+  --navy-950: #0b1220;
+  --navy-900: #111d32;
+  --navy-800: #13223d;
+  --navy-700: #1c3254;
+  --teal-500: #1f9993;
+  --teal-400: #2abfbf;
+  --teal-300: #5cd6d6;
+  --teal-100: #e0f5f4;
+  --gray-50: #f8f9fb;
+  --gray-100: #f0f2f5;
+  --gray-200: #e2e5ea;
+  --gray-400: #8a9db5;
+  --gray-500: #5a6b80;
+  --gray-600: #3d4f63;
+  --white: #ffffff;
 }
 
 html {
@@ -15,10 +26,10 @@ html {
 }
 
 body {
-  @apply bg-brand-50/40 text-slate-800 antialiased;
+  @apply bg-brand-50 text-brand-600 antialiased;
   background-image:
-    radial-gradient(circle at 10% 5%, rgba(186, 216, 236, 0.28), transparent 34%),
-    radial-gradient(circle at 90% 0%, rgba(31, 177, 159, 0.12), transparent 32%);
+    radial-gradient(circle at 12% 0%, rgba(31, 153, 147, 0.08), transparent 30%),
+    radial-gradient(circle at 90% 5%, rgba(19, 34, 61, 0.06), transparent 34%);
 }
 
 a {
@@ -26,7 +37,7 @@ a {
 }
 
 .hero-grid {
-  background-size: 22px 22px;
+  background-size: 24px 24px;
 }
 
 .texture-dots {
@@ -44,6 +55,25 @@ h1,
 h2,
 h3 {
   @apply tracking-tight;
+}
+
+.font-en {
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease-out both;
 }
 
 .text-body {

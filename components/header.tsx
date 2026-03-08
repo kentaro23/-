@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ButtonLink } from "@/components/ui";
+import { MediformaLogo } from "@/components/mediforma-logo";
 
 const navItems = [
   { href: "/services", label: "サービス" },
@@ -17,9 +18,10 @@ const navItems = [
 
 export function Header() {
   const [isCompact, setIsCompact] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsCompact(window.scrollY > 10);
+    const onScroll = () => setIsCompact(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -28,24 +30,15 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b border-slate-200/90 bg-white/85 backdrop-blur-md transition-all",
-        isCompact ? "shadow-panel" : ""
+        "sticky top-0 z-50 transition-all",
+        isCompact
+          ? "border-b border-brand-200 bg-white/92 shadow-panel backdrop-blur-md"
+          : "bg-transparent"
       )}
     >
-      <div
-        className={cn(
-          "mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6",
-          isCompact ? "h-14" : "h-16"
-        )}
-      >
-        <Link href="/" className="min-w-0 no-underline" aria-label="トップページへ戻る">
-          <div className="flex items-center gap-2">
-            <span className="h-6 w-1 rounded-full bg-accent-500" aria-hidden="true" />
-            <div>
-              <div className="text-sm font-bold text-brand-900 md:text-base">がっかりさせない学会</div>
-              <div className="text-[11px] text-slate-500">学会事務局代行</div>
-            </div>
-          </div>
+      <div className={cn("mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6", isCompact ? "h-16" : "h-20")}>
+        <Link href="/" className="no-underline" aria-label="トップページへ戻る">
+          <MediformaLogo inverted={!isCompact} />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -53,7 +46,12 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm text-slate-700 no-underline hover:bg-slate-100"
+              className={cn(
+                "rounded-lg px-3 py-2 text-sm no-underline",
+                isCompact
+                  ? "text-brand-700 hover:bg-brand-100 hover:text-brand-800"
+                  : "text-white/90 hover:bg-white/10 hover:text-white"
+              )}
             >
               {item.label}
             </Link>
@@ -67,30 +65,48 @@ export function Header() {
           <ButtonLink href="/contact" className="h-9 rounded-full px-3 text-xs">
             資料請求・見積依頼
           </ButtonLink>
-          <details>
-            <summary className="list-none rounded-lg border border-slate-200 p-2 text-slate-700 marker:content-none">
-              <Menu className="h-5 w-5" aria-hidden="true" />
-              <span className="sr-only">メニューを開く</span>
-            </summary>
-            <div className="absolute right-4 top-14 w-72 rounded-2xl border border-slate-200 bg-white p-3 shadow-soft">
-              <div className="grid gap-1">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-lg px-3 py-2 text-sm text-slate-700 no-underline hover:bg-slate-100"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <ButtonLink href="/contact" className="mt-2 w-full">
-                  資料請求・見積依頼
-                </ButtonLink>
-              </div>
-            </div>
-          </details>
+          <button
+            type="button"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className={cn(
+              "rounded-lg border p-2",
+              isCompact
+                ? "border-brand-200 bg-white text-brand-800"
+                : "border-white/40 bg-white/10 text-white"
+            )}
+            aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
+
+      {menuOpen ? (
+        <div className="fixed inset-0 z-40 bg-brand-900 px-6 pb-8 pt-24 md:hidden">
+          <div className="mx-auto max-w-md">
+            <div className="space-y-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-base font-medium text-white no-underline"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-accent-500 px-5 py-3 text-sm font-semibold text-white no-underline"
+            >
+              資料請求・見積依頼
+            </Link>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }

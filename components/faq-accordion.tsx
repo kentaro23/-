@@ -23,7 +23,13 @@ export function FAQAccordion({ items }: { items: readonly Item[] }) {
       {items.map((item, index) => {
         const isOpen = openIndexes.includes(index);
         return (
-          <div key={item.question} className="texture-mesh rounded-2xl border border-slate-200 bg-white">
+          <div
+            key={item.question}
+            className={cn(
+              "texture-mesh rounded-2xl border bg-white",
+              isOpen ? "border-accent-300" : "border-slate-200"
+            )}
+          >
             <button
               type="button"
               onClick={() => toggle(index)}
@@ -35,14 +41,14 @@ export function FAQAccordion({ items }: { items: readonly Item[] }) {
               </span>
               <ChevronDown
                 className={cn(
-                  "h-5 w-5 shrink-0 text-slate-500 transition-transform",
+                  "h-5 w-5 shrink-0 text-accent-500 transition-transform",
                   isOpen && "rotate-180"
                 )}
                 aria-hidden="true"
               />
             </button>
             {isOpen ? (
-              <div className="border-t border-slate-200 px-5 py-4 text-sm leading-7 text-slate-600">
+              <div className="border-t border-accent-300 px-5 py-4 text-sm leading-7 text-slate-600">
                 {item.answer}
               </div>
             ) : null}

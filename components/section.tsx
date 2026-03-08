@@ -31,15 +31,15 @@ export function SectionHeading({
   return (
     <div className={cn("mb-10 md:mb-12", align === "center" && "text-center")}>
       {eyebrow ? (
-        <p className="mb-3 text-xs font-semibold tracking-[0.14em] text-brand-700 md:text-sm">
+        <p className="font-en mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent-500 md:text-sm">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-2xl font-bold text-slate-900 md:text-4xl">
+      <h2 className="text-2xl font-bold text-brand-800 md:text-4xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600 md:text-base">
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-brand-500 md:text-base">
           {description}
         </p>
       ) : null}
