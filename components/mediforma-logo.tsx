@@ -13,17 +13,17 @@ export function MediformaLogo({
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <Image
-        src="/assets/mediforma_logo_only.svg"
+        src="/assets/mediforma_logo_mark.svg"
         alt="Mediforma logo"
-        width={160}
-        height={40}
-        className={cn("h-8 w-auto object-contain md:h-9", inverted && "bg-white p-1.5")}
+        width={54}
+        height={54}
+        className={cn("h-11 w-11 object-contain md:h-12 md:w-12", inverted && "bg-white p-1.5")}
         priority
       />
       <div className="min-w-fit self-center">
         <p
           className={cn(
-            "font-en whitespace-nowrap text-[1.15rem] font-medium leading-none",
+            "font-en whitespace-nowrap text-[1.65rem] font-medium leading-none tracking-[-0.01em]",
             inverted ? "text-white" : "text-brand-800"
           )}
         >
