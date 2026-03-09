@@ -23,7 +23,7 @@ export function MediformaLogo({
       <div className="min-w-fit self-center">
         <p
           className={cn(
-            "font-en whitespace-nowrap text-[1.65rem] font-medium leading-none tracking-[-0.01em]",
+            "font-en whitespace-nowrap text-[1.15rem] font-medium leading-none tracking-[-0.01em]",
             inverted ? "text-white" : "text-brand-800"
           )}
         >
