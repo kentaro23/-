@@ -18,12 +18,12 @@ export function ButtonLink({
     <Link
       {...props}
       className={cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-2xl px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2",
+        "inline-flex items-center justify-center whitespace-nowrap rounded-md px-5 py-2.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/20 focus-visible:ring-offset-2",
         variant === "primary" &&
-          "bg-accent-500 text-white hover:-translate-y-0.5 hover:bg-accent-400 shadow-panel",
+          "bg-ink text-white hover:bg-gray-800",
         variant === "secondary" &&
-          "border border-brand-200 bg-white text-brand-800 hover:-translate-y-0.5 hover:bg-brand-100",
-        variant === "ghost" && "text-accent-500 hover:bg-accent-100 hover:text-accent-600",
+          "border border-gray-300 bg-white text-ink hover:bg-gray-50",
+        variant === "ghost" && "text-ink hover:bg-gray-100",
         className
       )}
     >
@@ -40,7 +40,7 @@ export function Card({
     <div
       {...props}
       className={cn(
-        "rounded-2xl border border-slate-200/90 bg-white p-6 shadow-panel transition duration-200 hover:-translate-y-0.5",
+        "rounded-lg border border-gray-200 bg-white p-6",
         className
       )}
     />
@@ -55,7 +55,7 @@ export function Pill({
     <span
       {...props}
       className={cn(
-        "inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-900",
+        "inline-flex items-center rounded bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600",
         className
       )}
     />
@@ -70,9 +70,9 @@ export function StatCard({
   label: string;
 }) {
   return (
-    <div className="rounded-2xl border border-brand-100 bg-white px-4 py-4 shadow-sm">
-      <p className="text-xl font-bold text-brand-900 md:text-2xl">{value}</p>
-      <p className="mt-1 text-xs text-slate-600 md:text-sm">{label}</p>
+    <div className="border-l-2 border-accent pl-4">
+      <p className="text-base font-semibold text-ink">{value}</p>
+      <p className="mt-0.5 text-sm text-gray-500">{label}</p>
     </div>
   );
 }

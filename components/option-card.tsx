@@ -1,6 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import type { ServiceOption, OptionFeatureIconKey } from "@/content/options";
-import { Card, Pill } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
 const iconMap: Record<OptionFeatureIconKey, typeof MapPin> = {
@@ -19,14 +18,14 @@ export function OptionCard({
   className?: string;
 }) {
   return (
-    <Card className={cn("border-brand-100 bg-white", className)}>
-      <div className="flex flex-wrap items-center gap-2">
-        <Pill className="border-brand-200 bg-brand-50 text-brand-900">Option</Pill>
-        <h3 className="text-base font-semibold text-slate-900">{option.name}</h3>
+    <div className={cn("rounded-lg border border-gray-200 bg-white p-6", className)}>
+      <div className="flex items-center gap-2">
+        <span className="rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-500">Option</span>
+        <h3 className="text-sm font-semibold text-ink">{option.name}</h3>
       </div>
-      <p className="mt-3 text-xl font-bold text-brand-900">{option.price}</p>
+      <p className="mt-3 text-lg font-bold text-ink">{option.price}</p>
       {compact ? (
-        <p className="mt-3 text-sm text-slate-700">{option.shortLabel}</p>
+        <p className="mt-2 text-sm text-gray-500">{option.shortLabel}</p>
       ) : (
         <>
           <ul className="mt-4 space-y-2">
@@ -35,9 +34,9 @@ export function OptionCard({
               return (
                 <li
                   key={feature.text}
-                  className="flex items-start gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700"
+                  className="flex items-start gap-2 text-sm text-gray-600"
                 >
-                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-800" />
+                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-gray-400" />
                   <span>{feature.text}</span>
                 </li>
               );
@@ -45,13 +44,13 @@ export function OptionCard({
           </ul>
           <div className="mt-4 space-y-1">
             {option.notes.map((note) => (
-              <p key={note} className="text-xs leading-6 text-slate-500">
-                - {note}
+              <p key={note} className="text-xs text-gray-400">
+                {note}
               </p>
             ))}
           </div>
         </>
       )}
-    </Card>
+    </div>
   );
 }

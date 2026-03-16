@@ -1,6 +1,6 @@
 import { PageHero } from "@/components/page-hero";
 import { Section, SectionHeading } from "@/components/section";
-import { ButtonLink, Card } from "@/components/ui";
+import { ButtonLink } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
 import { flowSteps } from "@/lib/site-data";
 
@@ -19,53 +19,43 @@ export default function FlowPage() {
           eyebrow="Flow"
           title="お問い合わせから本契約・運用開始までの導入フロー"
           description="ヒアリング内容をもとに業務範囲と役割分担を整理し、お見積り・本契約・移行準備を経て運用を開始します。"
-          visual="flow"
           actions={<ButtonLink href="/contact">まずは相談する</ButtonLink>}
         />
       </Section>
 
-      <Section className="texture-dots">
+      <Section className="bg-surface">
         <SectionHeading
           title="導入ステップ（5段階）"
           description="実務の引継ぎリスクを抑えるため、段階ごとに確認事項と成果物を明確にして進めます。"
         />
-        <div className="space-y-4">
-          {flowSteps.map((step, index) => (
-            <div key={step.step} className="relative">
-              {index < flowSteps.length - 1 ? (
-                <span className="absolute left-7 top-16 hidden h-14 w-px bg-brand-200 md:block" />
-              ) : null}
-              <Card className="grid gap-4 md:grid-cols-[120px_1fr] md:items-start">
-              <div className="rounded-2xl bg-brand-50 px-4 py-3 ring-1 ring-brand-100">
-                <p className="text-xs font-semibold tracking-wide text-brand-800">
-                  STEP {step.step}
-                </p>
-              </div>
+        <div className="space-y-0 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white">
+          {flowSteps.map((step) => (
+            <div key={step.step} className="flex gap-5 px-6 py-6">
+              <span className="font-en mt-0.5 shrink-0 text-sm font-semibold text-accent">{step.step}</span>
               <div>
-                <h2 className="text-lg font-semibold text-slate-900">{step.title}</h2>
-                <p className="mt-2 text-sm leading-7 text-slate-600">{step.text}</p>
+                <h2 className="text-base font-semibold text-ink">{step.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-gray-500">{step.text}</p>
               </div>
-            </Card>
             </div>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50 texture-mesh">
+      <Section>
         <SectionHeading
           title="契約前に確認するポイント"
           description="本契約後の運用開始をスムーズにするため、事前に確認しておく項目です。"
         />
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-3 md:grid-cols-2">
           {[
             "学会側との連絡窓口・承認フロー",
             "会員管理・会計・会議運営の優先順位",
             "報告形式（頻度・粒度・担当者）",
             "資料・データ移管時の管理ルール"
           ].map((point) => (
-            <Card key={point} className="bg-white">
-              <p className="text-sm text-slate-700">{point}</p>
-            </Card>
+            <div key={point} className="rounded-lg border border-gray-200 bg-white px-5 py-4 text-sm text-gray-600">
+              {point}
+            </div>
           ))}
         </div>
       </Section>

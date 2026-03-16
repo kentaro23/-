@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   title: "FAQ",
   path: "/faq",
   description:
-    "学会事務局代行に関するよくある質問（個人情報、会計責任範囲、契約期間、契約までの流れ、会員数上限、発送、選挙、オンライン会議対応）をまとめています。"
+    "学会事務局代行に関するよくある質問をまとめています。"
 });
 
 export default function FaqPage() {
@@ -20,12 +20,11 @@ export default function FaqPage() {
           eyebrow="FAQ"
           title="よくある質問"
           description="導入前によくいただくご質問をまとめています。個別の運営条件によって回答が変わる場合は、ヒアリング時に具体的にご説明します。"
-          visual="faq"
           actions={<ButtonLink href="/contact">個別に相談する</ButtonLink>}
         />
       </Section>
 
-      <Section className="texture-dots">
+      <Section className="bg-surface">
         <FAQAccordion items={faqItems} />
       </Section>
     </>

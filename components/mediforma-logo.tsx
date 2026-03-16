@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 
 export function MediformaLogo({
   inverted = false,
-  subLabel,
   className
 }: {
   inverted?: boolean;
@@ -11,30 +10,23 @@ export function MediformaLogo({
   className?: string;
 }) {
   return (
-    <div className={cn("flex items-center gap-3", className)}>
+    <div className={cn("flex items-center gap-2.5", className)}>
       <Image
         src="/assets/mediforma_logo_mark.svg"
         alt="Mediforma logo"
-        width={54}
-        height={54}
-        className={cn("h-11 w-11 object-contain md:h-12 md:w-12", inverted && "bg-white p-1.5")}
+        width={36}
+        height={36}
+        className="h-8 w-8 object-contain"
         priority
       />
-      <div className="min-w-fit self-center">
-        <p
-          className={cn(
-            "font-en whitespace-nowrap text-[1.15rem] font-medium leading-none tracking-[-0.01em]",
-            inverted ? "text-white" : "text-brand-800"
-          )}
-        >
-          Mediforma Society
-        </p>
-        {subLabel ? (
-          <p className={cn("mt-1 text-sm leading-5", inverted ? "text-brand-100" : "text-brand-500")}>
-            {subLabel}
-          </p>
-        ) : null}
-      </div>
+      <span
+        className={cn(
+          "font-en text-sm font-semibold tracking-tight",
+          inverted ? "text-gray-300" : "text-ink"
+        )}
+      >
+        Mediforma Society
+      </span>
     </div>
   );
 }

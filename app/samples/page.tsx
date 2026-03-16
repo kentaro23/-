@@ -1,6 +1,6 @@
 import { PageHero } from "@/components/page-hero";
 import { Section, SectionHeading } from "@/components/section";
-import { ButtonLink, Card } from "@/components/ui";
+import { ButtonLink } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
 import { sampleArtifacts } from "@/lib/site-data";
 
@@ -19,26 +19,25 @@ export default function SamplesPage() {
           eyebrow="Samples"
           title="成果物サンプル"
           description="導入後にどのような形で情報が見えるかを、代表的な成果物サンプルで確認いただけます。"
-          visual="samples"
           actions={<ButtonLink href="/contact">実際の運用イメージを相談する</ButtonLink>}
         />
       </Section>
 
-      <Section className="texture-dots">
+      <Section className="bg-surface">
         <SectionHeading
           title="代表サンプル"
           description="以下は成果物イメージです。学会ごとの運用に合わせて形式を調整します。"
         />
-        <div className="space-y-5">
+        <div className="space-y-6">
           {sampleArtifacts.map((artifact) => (
-            <Card key={artifact.title} className="bg-white">
-              <h2 className="text-base font-semibold text-slate-900">{artifact.title}</h2>
-              <div className="mt-4 overflow-x-auto rounded-xl border border-slate-200">
+            <div key={artifact.title} className="rounded-lg border border-gray-200 bg-white p-6">
+              <h2 className="text-sm font-semibold text-ink">{artifact.title}</h2>
+              <div className="mt-4 overflow-x-auto rounded-lg border border-gray-200">
                 <table className="min-w-full text-sm">
-                  <thead className="bg-slate-50 text-left text-slate-900">
+                  <thead className="border-b border-gray-200 text-left">
                     <tr>
                       {artifact.columns.map((column) => (
-                        <th key={column} className="px-4 py-3 font-semibold">
+                        <th key={column} className="px-4 py-3 font-medium text-ink">
                           {column}
                         </th>
                       ))}
@@ -46,9 +45,9 @@ export default function SamplesPage() {
                   </thead>
                   <tbody>
                     {artifact.rows.map((row) => (
-                      <tr key={row.join("-")} className="border-t border-slate-200">
+                      <tr key={row.join("-")} className="border-t border-gray-100">
                         {row.map((cell) => (
-                          <td key={cell} className="px-4 py-3 text-slate-700">
+                          <td key={cell} className="px-4 py-3 text-gray-600">
                             {cell}
                           </td>
                         ))}
@@ -57,7 +56,7 @@ export default function SamplesPage() {
                   </tbody>
                 </table>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </Section>

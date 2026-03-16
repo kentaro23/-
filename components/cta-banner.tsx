@@ -8,19 +8,18 @@ export function CtaBanner({
   description?: string;
 }) {
   return (
-    <div className="rounded-3xl border border-brand-800 bg-gradient-to-br from-brand-900 to-brand-700 p-6 text-white shadow-panel md:p-8">
-      <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-        <div className="max-w-2xl">
-          <h3 className="text-xl font-bold md:text-2xl">{title}</h3>
-          <p className="mt-2 text-sm leading-7 text-brand-100 md:text-base">
-            {description}
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <ButtonLink href="/contact">
-            資料請求・見積依頼
-          </ButtonLink>
-        </div>
+    <div className="rounded-lg bg-ink px-8 py-10 text-center md:py-14">
+      <h3 className="text-xl font-bold text-white md:text-2xl">{title}</h3>
+      <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-gray-400">
+        {description}
+      </p>
+      <div className="mt-6">
+        <ButtonLink
+          href="/contact"
+          className="bg-white text-ink hover:bg-gray-100"
+        >
+          お問い合わせ
+        </ButtonLink>
       </div>
     </div>
   );

@@ -78,13 +78,13 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-6">
+    <form onSubmit={handleSubmit} noValidate className="space-y-5">
       <div className="grid gap-5 md:grid-cols-2">
         <Field
           label="団体名"
           required
           error={errors.organization}
-          hint="学会名・研究会名・法人名をご記入ください。"
+          hint="学会名・研究会名・法人名"
         >
           <input
             value={values.organization}
@@ -95,7 +95,7 @@ export function ContactForm() {
           />
         </Field>
 
-        <Field label="担当者名" required error={errors.name} hint="ご連絡先となる方のお名前">
+        <Field label="担当者名" required error={errors.name}>
           <input
             value={values.name}
             onChange={handleChange("name")}
@@ -105,7 +105,7 @@ export function ContactForm() {
           />
         </Field>
 
-        <Field label="メール" required error={errors.email} hint="確認メールを送信します。">
+        <Field label="メールアドレス" required error={errors.email}>
           <input
             type="email"
             value={values.email}
@@ -117,7 +117,7 @@ export function ContactForm() {
           />
         </Field>
 
-        <Field label="電話（任意）" error={errors.phone} hint="急ぎ対応が必要な場合のみご入力ください。">
+        <Field label="電話番号" error={errors.phone} hint="任意">
           <input
             type="tel"
             value={values.phone}
@@ -129,7 +129,7 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field label="会員数" required error={errors.memberCount} hint="概算でも問題ありません。">
+      <Field label="会員数" required error={errors.memberCount} hint="概算で構いません">
         <select
           value={values.memberCount}
           onChange={handleChange("memberCount")}
@@ -145,23 +145,22 @@ export function ContactForm() {
       </Field>
 
       <Field
-        label="相談内容"
+        label="ご相談内容"
         required
         error={errors.message}
-        hint="委託したい業務、課題、希望開始時期などを記載ください。"
       >
         <textarea
           value={values.message}
           onChange={handleChange("message")}
           className={inputClass(Boolean(errors.message))}
-          rows={6}
-          placeholder="現在の運営体制、委託を検討している業務範囲、課題感などをご記入ください。"
+          rows={5}
+          placeholder="現在の運営体制、委託を検討している業務範囲、課題感など"
           aria-invalid={Boolean(errors.message)}
         />
       </Field>
 
       {submitError ? (
-        <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <p className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
           {submitError}
         </p>
       ) : null}
@@ -169,11 +168,11 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="inline-flex items-center justify-center rounded-2xl bg-accent-500 px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-accent-400 disabled:cursor-not-allowed disabled:opacity-70"
+        className="rounded-md bg-ink px-6 py-2.5 text-sm font-medium text-white transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isPending ? "送信中..." : "送信する"}
       </button>
-      <p className="text-xs text-slate-500">通常1営業日以内にご返信します。</p>
+      <p className="text-xs text-gray-400">通常1営業日以内にご返信します。</p>
     </form>
   );
 }
@@ -193,23 +192,23 @@ function Field({
 }) {
   return (
     <label className="block">
-      <div className="mb-2 text-sm font-semibold text-slate-800">
-        {label}
-        {required ? <span className="ml-1 text-red-600">*</span> : null}
+      <div className="mb-1.5 flex items-baseline gap-1.5">
+        <span className="text-sm font-medium text-ink">{label}</span>
+        {required ? <span className="text-xs text-red-500">*</span> : null}
+        {hint ? <span className="text-xs text-gray-400">{hint}</span> : null}
       </div>
-      {hint ? <p className="mb-2 text-xs text-slate-500">{hint}</p> : null}
       {children}
-      {error ? <p className="mt-1 text-xs text-red-600">{error}</p> : null}
+      {error ? <p className="mt-1 text-xs text-red-500">{error}</p> : null}
     </label>
   );
 }
 
 function inputClass(hasError: boolean) {
   return [
-    "w-full rounded-2xl border bg-white px-4 py-3 text-sm text-slate-900 outline-none transition duration-200",
-    "placeholder:text-slate-400 focus:ring-2 focus:ring-accent-300",
+    "w-full rounded-md border bg-white px-3 py-2 text-sm text-ink outline-none transition",
+    "placeholder:text-gray-400 focus:ring-2 focus:ring-ink/10",
     hasError
       ? "border-red-300 focus:border-red-400"
-      : "border-slate-300 focus:border-accent-500 hover:border-accent-300"
+      : "border-gray-300 focus:border-gray-400"
   ].join(" ");
 }

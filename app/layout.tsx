@@ -30,7 +30,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ja">
-      <body className={`${notoSansJp.className} ${poppins.variable} font-sans`}>
+      <body className={`${notoSansJp.className} ${poppins.variable}`}>
         <div className="min-h-screen bg-white">
           <Header />
           <main>{children}</main>

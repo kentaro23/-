@@ -1,19 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
-import {
-  ArrowRight,
-  ChevronRight,
-  MoveRight
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { CtaBanner } from "@/components/cta-banner";
 import { FamilyBanner } from "@/components/family-banner";
-import { HeroVisual } from "@/components/hero-visual";
 import { ResponsibilitySplitDiagram } from "@/components/diagrams";
 import { OptionCard } from "@/components/option-card";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { TrustBadges } from "@/components/trust-badges";
 import { Section, SectionHeading } from "@/components/section";
-import { ButtonLink, Card, Pill, StatCard } from "@/components/ui";
+import { ButtonLink, Card, StatCard } from "@/components/ui";
 import { officeSetupOption } from "@/content/options";
 import { buildMetadata } from "@/lib/metadata";
 import {
@@ -33,71 +27,53 @@ export const metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
-      <Section className="pb-8 pt-8 md:pb-12 md:pt-12">
-        <div className="relative overflow-hidden rounded-4xl border border-brand-700 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 p-6 md:p-10">
-          <div className="pointer-events-none absolute inset-0 bg-hero-grid opacity-40 hero-grid" />
-          <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="fade-in-up">
-              <Pill className="font-en border-accent-400 bg-accent-500/15 uppercase tracking-[0.14em] text-accent-300">
-                医療・学術向け / 常設事務局の外部化（BPO）
-              </Pill>
-              <h1 className="mt-5 text-3xl font-bold text-white md:text-5xl">
-                がっかりさせない学会
-              </h1>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80 md:text-base">
-                がっかりさせない学会は、会員管理・会費徴収/督促を中心に、役員会運営を含む学会運営実務を継続支援します。先生方は意思決定と学術活動に集中し、運営負荷を平準化できます。
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <ButtonLink href="/contact">資料請求・見積依頼</ButtonLink>
-                <ButtonLink href="/services" variant="secondary" className="border-white/40 bg-white/10 text-white hover:bg-white/20">
-                  サービス詳細を見る
-                </ButtonLink>
-              </div>
-              <div className="mt-5">
-                <TrustBadges />
-              </div>
-            </div>
-
-            <div className="fade-in-up rounded-3xl border border-slate-200 bg-white p-5 shadow-panel md:p-6">
-              <HeroVisual name="home" className="mb-5" />
-              <p className="text-sm font-semibold text-slate-900">3秒でわかる導入効果</p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                <StatCard value="実務負荷を分散" label="担当依存を軽減" />
-                <StatCard value="月次で見える化" label="会計・進捗を可視化" />
-                <StatCard value="引継ぎしやすい" label="手順とログを標準化" />
-              </div>
-              <Link
-                href="/services"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent-500 no-underline hover:text-accent-600"
-              >
-                提供業務の詳細を見る <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
+      {/* Hero */}
+      <Section className="pt-16 pb-12 md:pt-24 md:pb-16">
+        <p className="font-en text-xs font-medium uppercase tracking-widest text-accent">
+          学会運営代行 / BPO
+        </p>
+        <h1 className="mt-3 text-3xl font-bold text-ink md:text-4xl lg:text-5xl">
+          がっかりさせない学会
+        </h1>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-500 md:text-lg">
+          会員管理・会費徴収/督促を中心に、役員会運営を含む学会運営実務を継続支援。
+          先生方は意思決定と学術活動に集中できます。
+        </p>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <ButtonLink href="/contact">お問い合わせ</ButtonLink>
+          <ButtonLink href="/services" variant="secondary">
+            サービス詳細
+          </ButtonLink>
+        </div>
+        <div className="mt-8">
+          <TrustBadges />
+        </div>
+        <div className="mt-10 grid gap-6 border-t border-gray-200 pt-10 sm:grid-cols-3">
+          <StatCard value="実務負荷を分散" label="担当依存を軽減" />
+          <StatCard value="月次で見える化" label="会計・進捗を可視化" />
+          <StatCard value="引継ぎしやすい" label="手順とログを標準化" />
         </div>
       </Section>
 
-      <Section className="texture-dots bg-white">
+      {/* Challenges */}
+      <Section className="bg-surface">
         <SectionHeading
           eyebrow="課題"
-          title="学会運営の実務が、診療・研究・教育の時間を圧迫していませんか"
-          description="担当者依存、会計の見えづらさ、会議運営の準備負担など、日常実務の積み上がりが運営品質を下げる原因になります。"
+          title="学会運営の実務が、本来の活動時間を圧迫していませんか"
+          description="担当者依存、会計の見えづらさ、会議準備の負担。日常実務の積み上がりが運営品質を下げる原因になります。"
         />
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {challenges.map((challenge) => (
-            <Card key={challenge}>
-              <div className="flex gap-3">
-                <div className="mt-0.5 rounded-full bg-brand-100 p-1.5 text-brand-800">
-                  <ChevronRight className="h-4 w-4" />
-                </div>
-                <p className="text-sm leading-7 text-slate-700">{challenge}</p>
-              </div>
-            </Card>
+        <div className="space-y-3">
+          {challenges.map((challenge, i) => (
+            <div key={challenge} className="flex gap-4 rounded-lg border border-gray-200 bg-white px-5 py-4">
+              <span className="font-en mt-0.5 text-sm font-medium text-gray-300">{String(i + 1).padStart(2, "0")}</span>
+              <p className="text-sm leading-relaxed text-gray-600">{challenge}</p>
+            </div>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-brand-50">
+      {/* Responsibility Split */}
+      <Section>
         <SectionHeading
           eyebrow="解決"
           title="意思決定は学会、実務は事務局代行で分担"
@@ -106,85 +82,61 @@ export default function HomePage() {
         <ResponsibilitySplitDiagram />
       </Section>
 
-      <Section className="texture-dots bg-brand-50">
+      {/* Services */}
+      <Section className="bg-surface">
         <SectionHeading
-          eyebrow="提供価値"
+          eyebrow="サービス"
           title="6カテゴリの実務を、必要範囲から委託"
-          description="月額コアとオプションを組み合わせ、実運用に沿った過不足のない体制を設計します。"
+          description="月額コアとオプションを組み合わせ、過不足のない体制を設計します。"
         />
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {serviceCategories.map((category) => {
             const Icon = category.icon;
             return (
-              <Card key={category.title} className="overflow-hidden border-brand-200">
-                <div className="mb-4 h-1 w-full rounded-full bg-accent-500" />
-                <Image
-                  src={
-                    category.title === "会員管理"
-                      ? "/assets/illustrations/Gemini_Generated_Image_qx18y0qx18y0qx18.png"
-                      : category.title === "選挙・法人運営"
-                      ? "/assets/illustrations/Gemini_Generated_Image_km7jj5km7jj5km7j.png"
-                      : category.title === "役員会・委員会運営"
-                        ? "/assets/illustrations/Gemini_Generated_Image_km7jj5km7jj5km7j-3.png"
-                        : category.title === "資産管理・アーカイブ"
-                          ? "/assets/illustrations/Gemini_Generated_Image_ibyw5fibyw5fibyw.png"
-                          : category.title === "会計財務"
-                            ? "/assets/illustrations/Gemini_Generated_Image_ezgs08ezgs08ezgs.png"
-                            : category.title === "文書・発送・一次窓口"
-                              ? "/assets/illustrations/Gemini_Generated_Image_ne1wl3ne1wl3ne1w.png"
-                              : `/assets/illustrations/service-${(serviceCategories.indexOf(category) % 6) + 1}.svg`
-                  }
-                  alt=""
-                  width={320}
-                  height={180}
-                  className="mb-4 h-auto w-full rounded-xl border border-brand-200"
-                />
-                <div className="flex items-center gap-3">
-                  <div className="rounded-xl bg-accent-100 p-2 text-accent-500 ring-1 ring-accent-300/40">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="font-semibold text-slate-900">{category.title}</h3>
+              <div key={category.title} className="rounded-lg border border-gray-200 bg-white p-5">
+                <div className="flex items-center gap-2.5">
+                  <Icon className="h-4 w-4 text-gray-400" />
+                  <h3 className="text-sm font-semibold text-ink">{category.title}</h3>
                 </div>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{category.summary}</p>
-              </Card>
+                <p className="mt-3 text-sm leading-relaxed text-gray-500">{category.summary}</p>
+              </div>
             );
           })}
         </div>
         <div className="mt-6 flex flex-wrap gap-2">
           {trustItems.map((item) => (
-            <Pill key={item} className="border-accent-200 bg-accent-50 text-accent-800">
+            <span key={item} className="rounded bg-gray-100 px-2.5 py-1 text-xs text-gray-500">
               {item}
-            </Pill>
+            </span>
           ))}
         </div>
-        <div className="mt-4 max-w-2xl">
+        <div className="mt-6 max-w-lg">
           <OptionCard option={officeSetupOption} compact />
         </div>
       </Section>
 
-      <Section className="bg-brand-50">
+      {/* Flow */}
+      <Section>
         <SectionHeading
           eyebrow="導入の流れ"
           title="本契約・移行までの5ステップ"
           description="段階ごとの成果物を明確にし、運用停止リスクを抑えながら移行します。"
         />
-        <div className="grid gap-4 lg:grid-cols-5">
-          {flowSteps.map((step, index) => (
-            <div key={step.step} className="relative">
-              <Card className="h-full border-brand-100/80">
-                <p className="font-en inline-flex rounded-full bg-accent-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-accent-500">STEP {step.step}</p>
-                <h3 className="mt-2 text-sm font-semibold text-slate-900">{step.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{step.text}</p>
-              </Card>
-              {index < flowSteps.length - 1 ? (
-                <MoveRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-accent-400 lg:block" />
-              ) : null}
+        <div className="space-y-0 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white">
+          {flowSteps.map((step) => (
+            <div key={step.step} className="flex gap-5 px-6 py-5">
+              <span className="font-en mt-0.5 shrink-0 text-sm font-semibold text-accent">{step.step}</span>
+              <div>
+                <h3 className="text-sm font-semibold text-ink">{step.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-gray-500">{step.text}</p>
+              </div>
             </div>
           ))}
         </div>
       </Section>
 
-      <Section className="texture-dots bg-white">
+      {/* Pricing */}
+      <Section className="bg-surface">
         <SectionHeading
           eyebrow="料金"
           title="月額コア + オプションで、運用実態に合わせる"
@@ -192,11 +144,11 @@ export default function HomePage() {
         />
         <div className="grid gap-4 md:grid-cols-3">
           {pricingTiers.map((tier) => (
-            <Card key={tier.name} className="bg-white texture-mesh border-brand-200">
-              <h3 className="text-sm font-semibold text-brand-900">{tier.name}</h3>
-              <p className="mt-1 text-sm text-slate-600">{tier.members}</p>
-              <p className="font-en mt-3 text-2xl font-bold text-accent-500">{tier.price}</p>
-            </Card>
+            <div key={tier.name} className="rounded-lg border border-gray-200 bg-white p-5">
+              <p className="text-sm font-semibold text-ink">{tier.name}</p>
+              <p className="mt-1 text-xs text-gray-400">{tier.members}</p>
+              <p className="font-en mt-4 text-2xl font-bold text-ink">{tier.price}</p>
+            </div>
           ))}
         </div>
         <div className="mt-5">
@@ -206,18 +158,19 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section className="bg-brand-50">
+      {/* FAQ Preview */}
+      <Section>
         <SectionHeading
           eyebrow="FAQ"
           title="よくある質問"
           description="契約条件・責任分界・運用体制に関する代表的な質問です。"
         />
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="divide-y divide-gray-200 border-t border-b border-gray-200">
           {faqItems.slice(0, 4).map((item) => (
-            <Card key={item.question} className="bg-white">
-              <h3 className="text-sm font-semibold text-slate-900">{item.question}</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600">{item.answer}</p>
-            </Card>
+            <div key={item.question} className="py-5">
+              <h3 className="text-sm font-medium text-ink">{item.question}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-500">{item.answer}</p>
+            </div>
           ))}
         </div>
         <div className="mt-5">
@@ -227,13 +180,14 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section className="pt-4">
+      {/* Testimonials */}
+      <Section className="bg-surface">
         <SectionHeading
           eyebrow="Voice"
           title="お客様の声"
           description="導入後にいただいた評価の一部をご紹介します。"
         />
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           <TestimonialCard
             title="運営担当の引継ぎ負荷が軽くなった"
             body="会員管理と会計の進捗が月次で見えるようになり、役員会での確認時間を短縮できました。"
@@ -247,11 +201,12 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section className="pt-2">
+      {/* Family + CTA */}
+      <Section>
         <FamilyBanner />
       </Section>
 
-      <Section className="pt-2">
+      <Section className="pt-0">
         <CtaBanner />
       </Section>
     </>

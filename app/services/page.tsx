@@ -2,9 +2,8 @@ import { ResponsibilitySplitDiagram } from "@/components/diagrams";
 import { MonthlyCycle } from "@/components/monthly-cycle";
 import { OptionCard } from "@/components/option-card";
 import { PageHero } from "@/components/page-hero";
-import Image from "next/image";
 import { Section, SectionHeading } from "@/components/section";
-import { ButtonLink, Card, Pill } from "@/components/ui";
+import { ButtonLink } from "@/components/ui";
 import { optionCards } from "@/content/options";
 import { buildMetadata } from "@/lib/metadata";
 import {
@@ -32,10 +31,9 @@ export default function ServicesPage() {
           eyebrow="Services"
           title="学会事務局として、日常運用を実務レベルで支援"
           description="業務内容だけでなく、毎月の成果物と運用サイクルを明確化したうえで委託範囲を設計します。"
-          visual="services"
           actions={
             <>
-              <ButtonLink href="/contact">資料請求</ButtonLink>
+              <ButtonLink href="/contact">お問い合わせ</ButtonLink>
               <ButtonLink href="/pricing" variant="secondary">
                 料金の目安を見る
               </ButtonLink>
@@ -44,7 +42,7 @@ export default function ServicesPage() {
         />
       </Section>
 
-      <Section className="texture-dots">
+      <Section className="bg-surface">
         <SectionHeading
           title="提供業務一覧（6カテゴリ）"
           description="コア業務2領域を中心に、必要に応じて周辺業務を追加できる設計です。"
@@ -54,78 +52,54 @@ export default function ServicesPage() {
             const Icon = category.icon;
             const output = serviceOutputs.find((item) => item.title === category.title);
             return (
-              <Card key={category.title} className="overflow-hidden p-0">
-                <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <div className="rounded-xl bg-white p-2 text-brand-800 ring-1 ring-slate-200">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h2 className="text-lg font-semibold text-slate-900">{category.title}</h2>
-                    {coreCategoryTitles.has(category.title) ? (
-                      <Pill className="ml-auto">月額コアプラン対象</Pill>
-                    ) : null}
-                  </div>
+              <div key={category.title} className="overflow-hidden rounded-lg border border-gray-200 bg-white">
+                <div className="flex items-center gap-3 border-b border-gray-100 px-6 py-4">
+                  <Icon className="h-4 w-4 text-gray-400" />
+                  <h2 className="text-base font-semibold text-ink">{category.title}</h2>
+                  {coreCategoryTitles.has(category.title) ? (
+                    <span className="ml-auto rounded bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent-dark">コア</span>
+                  ) : null}
                 </div>
                 <div className="px-6 py-5">
-                  <Image
-                    src={
-                      category.title === "会員管理"
-                        ? "/assets/illustrations/Gemini_Generated_Image_qx18y0qx18y0qx18.png"
-                        : category.title === "選挙・法人運営"
-                        ? "/assets/illustrations/Gemini_Generated_Image_km7jj5km7jj5km7j.png"
-                        : category.title === "役員会・委員会運営"
-                          ? "/assets/illustrations/Gemini_Generated_Image_km7jj5km7jj5km7j-3.png"
-                          : category.title === "資産管理・アーカイブ"
-                            ? "/assets/illustrations/Gemini_Generated_Image_ibyw5fibyw5fibyw.png"
-                            : category.title === "会計財務"
-                              ? "/assets/illustrations/Gemini_Generated_Image_ezgs08ezgs08ezgs.png"
-                              : category.title === "文書・発送・一次窓口"
-                                ? "/assets/illustrations/Gemini_Generated_Image_ne1wl3ne1wl3ne1w.png"
-                                : `/assets/illustrations/service-${(serviceCategories.indexOf(category) % 6) + 1}.svg`
-                    }
-                    alt=""
-                    width={320}
-                    height={180}
-                    className="mb-4 h-auto w-full rounded-xl border border-brand-100/60"
-                  />
-                  <p className="text-sm leading-7 text-slate-600">{category.summary}</p>
-                  <ul className="mt-4 space-y-2">
+                  <p className="text-sm leading-relaxed text-gray-500">{category.summary}</p>
+                  <ul className="mt-4 space-y-1.5">
                     {category.items.map((item) => (
                       <li
                         key={item}
-                        className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700"
+                        className="flex items-center gap-2 text-sm text-gray-600"
                       >
+                        <span className="h-1 w-1 shrink-0 rounded-full bg-gray-300" />
                         {item}
                       </li>
                     ))}
                   </ul>
                   {output ? (
-                    <div className="mt-4 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3">
-                      <p className="text-xs font-semibold tracking-wide text-brand-900">成果物（アウトプット例）</p>
-                      <ul className="mt-2 flex flex-wrap gap-2">
+                    <div className="mt-4 border-t border-gray-100 pt-4">
+                      <p className="text-xs font-medium text-gray-400">成果物</p>
+                      <div className="mt-2 flex flex-wrap gap-1.5">
                         {output.outputs.map((item) => (
-                          <li
+                          <span
                             key={item}
-                            className="rounded-full border border-brand-200 bg-white px-3 py-1 text-xs text-slate-700"
+                            className="rounded bg-gray-50 px-2 py-0.5 text-xs text-gray-500"
                           >
                             {item}
-                          </li>
+                          </span>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   ) : null}
                 </div>
-              </Card>
+              </div>
             );
           })}
         </div>
       </Section>
 
-      <Section className="bg-slate-50 texture-mesh">
+      <Section>
         <MonthlyCycle />
       </Section>
 
-      <Section className="texture-dots">
+      <Section className="bg-surface">
         <SectionHeading
           title="単発・スポットでご相談いただける業務"
           description="総会・年次学術集会の開催や学会誌関連など、非定常業務は必要な時だけ追加できます。"
@@ -134,68 +108,63 @@ export default function ServicesPage() {
           {spotServices.map((service) => {
             const Icon = service.icon;
             return (
-              <Card key={service.title} className="overflow-hidden bg-white p-0">
-                <div className="border-b border-slate-200 bg-white px-6 py-4">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <div className="rounded-xl bg-brand-50 p-2 text-brand-800 ring-1 ring-brand-100">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h2 className="text-lg font-semibold text-slate-900">{service.title}</h2>
-                    <Pill className="ml-auto border-slate-200 bg-slate-100 text-slate-800">単発オプション</Pill>
-                  </div>
+              <div key={service.title} className="overflow-hidden rounded-lg border border-gray-200 bg-white">
+                <div className="flex items-center gap-3 border-b border-gray-100 px-6 py-4">
+                  <Icon className="h-4 w-4 text-gray-400" />
+                  <h2 className="text-base font-semibold text-ink">{service.title}</h2>
+                  <span className="ml-auto rounded bg-gray-100 px-2 py-0.5 text-xs text-gray-500">スポット</span>
                 </div>
                 <div className="px-6 py-5">
-                  <p className="text-sm leading-7 text-slate-600">{service.summary}</p>
-                  <ul className="mt-4 space-y-2">
+                  <p className="text-sm leading-relaxed text-gray-500">{service.summary}</p>
+                  <ul className="mt-4 space-y-1.5">
                     {service.items.map((item) => (
                       <li
                         key={item}
-                        className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700"
+                        className="flex items-center gap-2 text-sm text-gray-600"
                       >
+                        <span className="h-1 w-1 shrink-0 rounded-full bg-gray-300" />
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-              </Card>
+              </div>
             );
           })}
         </div>
       </Section>
 
-      <Section className="bg-slate-50 texture-mesh">
+      <Section>
         <SectionHeading
           title="責任分界の基本"
           description="実務を委託しても、最終責任と意思決定は学会側に残ることを明確化して運用します。"
         />
-        <div className="mb-6">
-          <ResponsibilitySplitDiagram />
-        </div>
-        <div className="grid gap-3 md:grid-cols-3">
+        <ResponsibilitySplitDiagram />
+        <div className="mt-6 space-y-2">
           {boundaryItems.map((item) => (
-            <div key={item} className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
-              {item}
-            </div>
+            <p key={item} className="text-sm text-gray-500">
+              &mdash; {item}
+            </p>
           ))}
         </div>
       </Section>
 
-      <Section className="texture-dots">
+      <Section className="bg-surface">
         <SectionHeading
           title="追加対応しやすい周辺業務"
           description="競合サービスで見られる周辺領域も、必要時に段階的に追加できます。"
         />
         <div className="grid gap-4 md:grid-cols-2">
           {extendedServiceItems.map((item) => (
-            <Card key={item.title} className="bg-white">
-              <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
-            </Card>
+            <div key={item.title} className="rounded-lg border border-gray-200 bg-white p-5">
+              <h3 className="text-sm font-semibold text-ink">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-500">{item.description}</p>
+            </div>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50 texture-mesh">
+      <Section>
         <SectionHeading
           title="オプション対応"
           description="事務局機能の拡張が必要な場合は、個別に追加できます。"
