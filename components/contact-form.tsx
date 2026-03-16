@@ -160,7 +160,7 @@ export function ContactForm() {
       </Field>
 
       {submitError ? (
-        <p className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+        <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
           {submitError}
         </p>
       ) : null}
@@ -168,7 +168,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="rounded-md bg-ink px-6 py-2.5 text-sm font-medium text-white transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50"
+        className="rounded-lg bg-brand-600 px-6 py-2.5 text-sm font-medium text-white shadow-subtle transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isPending ? "送信中..." : "送信する"}
       </button>
@@ -205,10 +205,10 @@ function Field({
 
 function inputClass(hasError: boolean) {
   return [
-    "w-full rounded-md border bg-white px-3 py-2 text-sm text-ink outline-none transition",
-    "placeholder:text-gray-400 focus:ring-2 focus:ring-ink/10",
+    "w-full rounded-lg border bg-white px-3 py-2.5 text-sm text-ink outline-none transition",
+    "placeholder:text-gray-400 focus:ring-2 focus:ring-brand-500/20",
     hasError
       ? "border-red-300 focus:border-red-400"
-      : "border-gray-300 focus:border-gray-400"
+      : "border-gray-300 focus:border-brand-500"
   ].join(" ");
 }

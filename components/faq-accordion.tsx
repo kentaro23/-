@@ -19,7 +19,7 @@ export function FAQAccordion({ items }: { items: readonly Item[] }) {
   };
 
   return (
-    <div className="divide-y divide-gray-200 border-t border-gray-200">
+    <div className="divide-y divide-gray-200 rounded-xl border border-gray-200 bg-white shadow-card">
       {items.map((item, index) => {
         const isOpen = openIndexes.includes(index);
         return (
@@ -27,7 +27,7 @@ export function FAQAccordion({ items }: { items: readonly Item[] }) {
             <button
               type="button"
               onClick={() => toggle(index)}
-              className="flex w-full items-center justify-between gap-4 py-5 text-left"
+              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
               aria-expanded={isOpen}
             >
               <span className="text-sm font-medium text-ink md:text-base">
@@ -35,14 +35,14 @@ export function FAQAccordion({ items }: { items: readonly Item[] }) {
               </span>
               <ChevronDown
                 className={cn(
-                  "h-4 w-4 shrink-0 text-gray-400 transition-transform",
+                  "h-4 w-4 shrink-0 text-brand-500 transition-transform",
                   isOpen && "rotate-180"
                 )}
                 aria-hidden="true"
               />
             </button>
             {isOpen ? (
-              <div className="pb-5 text-sm leading-relaxed text-gray-500">
+              <div className="px-6 pb-5 text-sm leading-relaxed text-gray-500">
                 {item.answer}
               </div>
             ) : null}

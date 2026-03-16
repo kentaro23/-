@@ -28,14 +28,14 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <Section className="pt-16 pb-12 md:pt-24 md:pb-16">
-        <p className="font-en text-xs font-medium uppercase tracking-widest text-accent">
+      <Section className="hero-gradient pt-16 pb-14 md:pt-24 md:pb-20">
+        <p className="font-en text-xs font-semibold uppercase tracking-widest text-brand-700">
           学会運営代行 / BPO
         </p>
         <h1 className="mt-3 text-3xl font-bold text-ink md:text-4xl lg:text-5xl">
           がっかりさせない学会
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-500 md:text-lg">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-600 md:text-lg">
           会員管理・会費徴収/督促を中心に、役員会運営を含む学会運営実務を継続支援。
           先生方は意思決定と学術活動に集中できます。
         </p>
@@ -48,7 +48,7 @@ export default function HomePage() {
         <div className="mt-8">
           <TrustBadges />
         </div>
-        <div className="mt-10 grid gap-6 border-t border-gray-200 pt-10 sm:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <StatCard value="実務負荷を分散" label="担当依存を軽減" />
           <StatCard value="月次で見える化" label="会計・進捗を可視化" />
           <StatCard value="引継ぎしやすい" label="手順とログを標準化" />
@@ -56,7 +56,7 @@ export default function HomePage() {
       </Section>
 
       {/* Challenges */}
-      <Section className="bg-surface">
+      <Section>
         <SectionHeading
           eyebrow="課題"
           title="学会運営の実務が、本来の活動時間を圧迫していませんか"
@@ -64,8 +64,8 @@ export default function HomePage() {
         />
         <div className="space-y-3">
           {challenges.map((challenge, i) => (
-            <div key={challenge} className="flex gap-4 rounded-lg border border-gray-200 bg-white px-5 py-4">
-              <span className="font-en mt-0.5 text-sm font-medium text-gray-300">{String(i + 1).padStart(2, "0")}</span>
+            <div key={challenge} className="flex gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 shadow-card">
+              <span className="font-en mt-0.5 text-sm font-bold text-brand-500">{String(i + 1).padStart(2, "0")}</span>
               <p className="text-sm leading-relaxed text-gray-600">{challenge}</p>
             </div>
           ))}
@@ -73,7 +73,7 @@ export default function HomePage() {
       </Section>
 
       {/* Responsibility Split */}
-      <Section>
+      <Section className="bg-gray-50">
         <SectionHeading
           eyebrow="解決"
           title="意思決定は学会、実務は事務局代行で分担"
@@ -83,7 +83,7 @@ export default function HomePage() {
       </Section>
 
       {/* Services */}
-      <Section className="bg-surface">
+      <Section>
         <SectionHeading
           eyebrow="サービス"
           title="6カテゴリの実務を、必要範囲から委託"
@@ -93,9 +93,11 @@ export default function HomePage() {
           {serviceCategories.map((category) => {
             const Icon = category.icon;
             return (
-              <div key={category.title} className="rounded-lg border border-gray-200 bg-white p-5">
+              <div key={category.title} className="rounded-xl border border-gray-200 bg-white p-5 shadow-card transition hover:shadow-elevated">
                 <div className="flex items-center gap-2.5">
-                  <Icon className="h-4 w-4 text-gray-400" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-50">
+                    <Icon className="h-4 w-4 text-brand-600" />
+                  </div>
                   <h3 className="text-sm font-semibold text-ink">{category.title}</h3>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-gray-500">{category.summary}</p>
@@ -105,7 +107,7 @@ export default function HomePage() {
         </div>
         <div className="mt-6 flex flex-wrap gap-2">
           {trustItems.map((item) => (
-            <span key={item} className="rounded bg-gray-100 px-2.5 py-1 text-xs text-gray-500">
+            <span key={item} className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-500">
               {item}
             </span>
           ))}
@@ -116,16 +118,16 @@ export default function HomePage() {
       </Section>
 
       {/* Flow */}
-      <Section>
+      <Section className="bg-gray-50">
         <SectionHeading
           eyebrow="導入の流れ"
           title="本契約・移行までの5ステップ"
           description="段階ごとの成果物を明確にし、運用停止リスクを抑えながら移行します。"
         />
-        <div className="space-y-0 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white">
+        <div className="space-y-0 divide-y divide-gray-200 rounded-xl border border-gray-200 bg-white shadow-card">
           {flowSteps.map((step) => (
             <div key={step.step} className="flex gap-5 px-6 py-5">
-              <span className="font-en mt-0.5 shrink-0 text-sm font-semibold text-accent">{step.step}</span>
+              <span className="font-en mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">{step.step}</span>
               <div>
                 <h3 className="text-sm font-semibold text-ink">{step.title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-gray-500">{step.text}</p>
@@ -136,18 +138,18 @@ export default function HomePage() {
       </Section>
 
       {/* Pricing */}
-      <Section className="bg-surface">
+      <Section>
         <SectionHeading
           eyebrow="料金"
           title="月額コア + オプションで、運用実態に合わせる"
           description="会員数に応じた目安レンジを基準に、非定常業務をオプション化して見積を最適化します。"
         />
         <div className="grid gap-4 md:grid-cols-3">
-          {pricingTiers.map((tier) => (
-            <div key={tier.name} className="rounded-lg border border-gray-200 bg-white p-5">
+          {pricingTiers.map((tier, i) => (
+            <div key={tier.name} className={`rounded-xl border p-6 shadow-card ${i === 1 ? "border-brand-200 bg-brand-50/50" : "border-gray-200 bg-white"}`}>
               <p className="text-sm font-semibold text-ink">{tier.name}</p>
               <p className="mt-1 text-xs text-gray-400">{tier.members}</p>
-              <p className="font-en mt-4 text-2xl font-bold text-ink">{tier.price}</p>
+              <p className={`font-en mt-4 text-2xl font-bold ${i === 1 ? "text-brand-700" : "text-ink"}`}>{tier.price}</p>
             </div>
           ))}
         </div>
@@ -159,15 +161,15 @@ export default function HomePage() {
       </Section>
 
       {/* FAQ Preview */}
-      <Section>
+      <Section className="bg-gray-50">
         <SectionHeading
           eyebrow="FAQ"
           title="よくある質問"
           description="契約条件・責任分界・運用体制に関する代表的な質問です。"
         />
-        <div className="divide-y divide-gray-200 border-t border-b border-gray-200">
+        <div className="divide-y divide-gray-200 rounded-xl border border-gray-200 bg-white shadow-card">
           {faqItems.slice(0, 4).map((item) => (
-            <div key={item.question} className="py-5">
+            <div key={item.question} className="px-6 py-5">
               <h3 className="text-sm font-medium text-ink">{item.question}</h3>
               <p className="mt-2 text-sm leading-relaxed text-gray-500">{item.answer}</p>
             </div>
@@ -181,13 +183,13 @@ export default function HomePage() {
       </Section>
 
       {/* Testimonials */}
-      <Section className="bg-surface">
+      <Section>
         <SectionHeading
           eyebrow="Voice"
           title="お客様の声"
           description="導入後にいただいた評価の一部をご紹介します。"
         />
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           <TestimonialCard
             title="運営担当の引継ぎ負荷が軽くなった"
             body="会員管理と会計の進捗が月次で見えるようになり、役員会での確認時間を短縮できました。"
@@ -202,11 +204,11 @@ export default function HomePage() {
       </Section>
 
       {/* Family + CTA */}
-      <Section>
+      <Section className="bg-gray-50">
         <FamilyBanner />
       </Section>
 
-      <Section className="pt-0">
+      <Section>
         <CtaBanner />
       </Section>
     </>

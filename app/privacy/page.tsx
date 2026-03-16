@@ -5,13 +5,13 @@ import { buildMetadata, siteConfig } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "プライバシーポリシー",
   path: "/privacy",
-  description: "がっかりさせない学会（学会運営代行）のプライバシーポリシーです。"
+  description: "Mediforma Societyのプライバシーポリシーです。"
 });
 
 const sections = [
   {
     title: "1. 事業者情報",
-    body: "がっかりさせない学会（学会運営代行）（以下「当社」といいます。）は、学会運営代行サービスの提供にあたり、個人情報の保護を重要な責務と認識し、適切に取り扱います。"
+    body: "Mediforma Society（以下「当社」といいます。）は、学会運営代行サービスの提供にあたり、個人情報の保護を重要な責務と認識し、適切に取り扱います。"
   },
   {
     title: "2. 取得する情報",
@@ -58,15 +58,15 @@ export default function PrivacyPage() {
         <PageHero
           eyebrow="Privacy Policy"
           title="プライバシーポリシー"
-          description="がっかりさせない学会（学会運営代行）のプライバシーポリシーです。"
+          description="Mediforma Societyのプライバシーポリシーです。"
         />
       </Section>
 
       <Section className="pt-0">
-        <div className="space-y-8">
+        <div className="mx-auto max-w-3xl space-y-8">
           {sections.map((section) => (
             <div key={section.title}>
-              <h2 className="text-sm font-semibold text-ink">{section.title}</h2>
+              <h2 className="text-base font-semibold text-ink">{section.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-gray-500">{section.body}</p>
             </div>
           ))}

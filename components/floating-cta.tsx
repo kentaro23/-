@@ -5,7 +5,7 @@ export function FloatingCta() {
     <div className="fixed inset-x-4 bottom-4 z-40 md:inset-x-auto md:bottom-5 md:right-5">
       <Link
         href="/contact"
-        className="block rounded-md bg-ink px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg no-underline transition hover:bg-gray-800 md:inline-block"
+        className="block rounded-xl bg-brand-600 px-5 py-2.5 text-center text-sm font-medium text-white shadow-elevated no-underline transition hover:bg-brand-700 md:inline-block"
       >
         お問い合わせ
       </Link>

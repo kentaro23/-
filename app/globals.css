@@ -27,3 +27,13 @@ h3 {
 .font-en {
   font-family: Poppins, "Noto Sans JP", sans-serif;
 }
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 30%, #e0f2fe 70%, #f0fdfa 100%);
+}
+
+/* Dark section gradient */
+.dark-section {
+  background: linear-gradient(135deg, #0f172a 0%, #134e4a 100%);
+}

@@ -44,7 +44,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-1.5 text-sm text-gray-600 no-underline transition hover:bg-gray-50 hover:text-ink"
+              className="rounded-lg px-3 py-1.5 text-sm text-gray-600 no-underline transition hover:bg-brand-50 hover:text-brand-700"
             >
               {item.label}
             </Link>
@@ -61,7 +61,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="rounded-md border border-gray-200 p-1.5 text-gray-700"
+            className="rounded-lg border border-gray-200 p-1.5 text-gray-700"
             aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
             aria-expanded={menuOpen}
           >
@@ -78,7 +78,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block rounded-md px-4 py-3 text-base text-gray-700 no-underline transition hover:bg-gray-50"
+                className="block rounded-lg px-4 py-3 text-base text-gray-700 no-underline transition hover:bg-brand-50"
               >
                 {item.label}
               </Link>
@@ -87,7 +87,7 @@ export function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMenuOpen(false)}
-                className="block w-full rounded-md bg-ink py-3 text-center text-sm font-medium text-white no-underline"
+                className="block w-full rounded-lg bg-brand-600 py-3 text-center text-sm font-medium text-white no-underline"
               >
                 お問い合わせ
               </Link>

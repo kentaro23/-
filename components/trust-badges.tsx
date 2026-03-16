@@ -6,7 +6,7 @@ export function TrustBadges() {
       {items.map((item) => (
         <span
           key={item}
-          className="inline-flex items-center rounded bg-gray-100 px-2.5 py-1 text-xs text-gray-600"
+          className="inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700"
         >
           {item}
         </span>

@@ -2,7 +2,7 @@ import { serviceCategories } from "@/lib/site-data";
 
 export function FunctionMapDiagram() {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6">
+    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-card">
       <h3 className="text-base font-semibold text-ink">
         学会運営代行の機能マップ（6カテゴリ）
       </h3>
@@ -12,16 +12,16 @@ export function FunctionMapDiagram() {
           return (
             <div
               key={category.title}
-              className="rounded-lg border border-gray-100 bg-surface p-4"
+              className="rounded-lg border border-gray-100 bg-gray-50 p-4"
             >
               <div className="flex items-center gap-2.5">
-                <Icon className="h-4 w-4 text-gray-400" aria-hidden="true" />
+                <Icon className="h-4 w-4 text-brand-600" aria-hidden="true" />
                 <p className="text-sm font-semibold text-ink">{category.title}</p>
               </div>
               <ul className="mt-3 space-y-1 text-sm text-gray-500">
                 {category.items.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gray-300" />
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-400" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -49,26 +49,26 @@ export function ResponsibilitySplitDiagram() {
   ];
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6">
+    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-card">
       <h3 className="text-base font-semibold text-ink">
         分担イメージ（意思決定 / 実務）
       </h3>
       <div className="mt-5 grid gap-4 md:grid-cols-2">
-        <div className="rounded-lg bg-ink p-5">
+        <div className="rounded-xl bg-navy-900 p-5">
           <p className="text-sm font-semibold text-white">意思決定（学会）</p>
           <ul className="mt-3 space-y-2">
             {academicSide.map((item) => (
-              <li key={item} className="rounded bg-white/10 px-3 py-2 text-sm text-gray-300">
+              <li key={item} className="rounded-lg bg-white/10 px-3 py-2 text-sm text-gray-300">
                 {item}
               </li>
             ))}
           </ul>
         </div>
-        <div className="rounded-lg border-2 border-accent bg-accent/5 p-5">
-          <p className="text-sm font-semibold text-ink">実務（代行）</p>
+        <div className="rounded-xl border-2 border-brand-200 bg-brand-50 p-5">
+          <p className="text-sm font-semibold text-brand-800">実務（代行）</p>
           <ul className="mt-3 space-y-2">
             {officeSide.map((item) => (
-              <li key={item} className="rounded bg-white px-3 py-2 text-sm text-gray-600">
+              <li key={item} className="rounded-lg bg-white px-3 py-2 text-sm text-gray-600 shadow-subtle">
                 {item}
               </li>
             ))}

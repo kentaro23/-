@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 export default function SamplesPage() {
   return (
     <>
-      <Section className="pb-8 pt-10">
+      <Section className="hero-gradient pb-8 pt-10">
         <PageHero
           eyebrow="Samples"
           title="成果物サンプル"
@@ -23,18 +23,18 @@ export default function SamplesPage() {
         />
       </Section>
 
-      <Section className="bg-surface">
+      <Section>
         <SectionHeading
           title="代表サンプル"
           description="以下は成果物イメージです。学会ごとの運用に合わせて形式を調整します。"
         />
         <div className="space-y-6">
           {sampleArtifacts.map((artifact) => (
-            <div key={artifact.title} className="rounded-lg border border-gray-200 bg-white p-6">
+            <div key={artifact.title} className="rounded-xl border border-gray-200 bg-white p-6 shadow-card">
               <h2 className="text-sm font-semibold text-ink">{artifact.title}</h2>
               <div className="mt-4 overflow-x-auto rounded-lg border border-gray-200">
                 <table className="min-w-full text-sm">
-                  <thead className="border-b border-gray-200 text-left">
+                  <thead className="border-b border-gray-200 bg-gray-50 text-left">
                     <tr>
                       {artifact.columns.map((column) => (
                         <th key={column} className="px-4 py-3 font-medium text-ink">

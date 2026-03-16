@@ -8,23 +8,22 @@ import { faqItems } from "@/lib/site-data";
 export const metadata = buildMetadata({
   title: "FAQ",
   path: "/faq",
-  description:
-    "学会事務局代行に関するよくある質問をまとめています。"
+  description: "学会事務局代行に関するよくある質問と回答をまとめています。"
 });
 
-export default function FaqPage() {
+export default function FAQPage() {
   return (
     <>
-      <Section className="pb-8 pt-10">
+      <Section className="hero-gradient pb-8 pt-10">
         <PageHero
           eyebrow="FAQ"
           title="よくある質問"
-          description="導入前によくいただくご質問をまとめています。個別の運営条件によって回答が変わる場合は、ヒアリング時に具体的にご説明します。"
+          description="学会事務局代行に関して、契約条件・責任分界・運用体制など代表的な質問をまとめています。"
           actions={<ButtonLink href="/contact">個別に相談する</ButtonLink>}
         />
       </Section>
 
-      <Section className="bg-surface">
+      <Section>
         <FAQAccordion items={faqItems} />
       </Section>
     </>

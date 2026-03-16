@@ -18,12 +18,12 @@ export function OptionCard({
   className?: string;
 }) {
   return (
-    <div className={cn("rounded-lg border border-gray-200 bg-white p-6", className)}>
+    <div className={cn("rounded-xl border border-gray-200 bg-white p-6 shadow-card", className)}>
       <div className="flex items-center gap-2">
-        <span className="rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-500">Option</span>
+        <span className="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">Option</span>
         <h3 className="text-sm font-semibold text-ink">{option.name}</h3>
       </div>
-      <p className="mt-3 text-lg font-bold text-ink">{option.price}</p>
+      <p className="mt-3 text-lg font-bold text-brand-700">{option.price}</p>
       {compact ? (
         <p className="mt-2 text-sm text-gray-500">{option.shortLabel}</p>
       ) : (
@@ -36,7 +36,7 @@ export function OptionCard({
                   key={feature.text}
                   className="flex items-start gap-2 text-sm text-gray-600"
                 >
-                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-gray-400" />
+                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
                   <span>{feature.text}</span>
                 </li>
               );

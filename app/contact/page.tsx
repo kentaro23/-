@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
 export default function ContactPage() {
   return (
     <>
-      <Section className="pb-8 pt-10">
+      <Section className="hero-gradient pb-8 pt-10">
         <PageHero
           eyebrow="Contact"
           title="資料請求・見積依頼・ご相談"
@@ -27,17 +27,17 @@ export default function ContactPage() {
             <ContactForm />
           </div>
           <aside className="space-y-6">
-            <div className="rounded-lg border border-gray-200 bg-surface p-6">
+            <div className="rounded-xl border border-brand-100 bg-brand-50/50 p-6">
               <h2 className="text-sm font-semibold text-ink">ご相談時にあるとスムーズな情報</h2>
-              <ul className="mt-3 space-y-2 text-sm text-gray-500">
-                <li>会員数と会費体系</li>
-                <li>委員会 / 役員会の開催頻度</li>
-                <li>会計処理の現状（範囲・方法）</li>
-                <li>発送物の種類と頻度</li>
-                <li>優先して委託したい業務</li>
+              <ul className="mt-3 space-y-2 text-sm text-gray-600">
+                <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />会員数と会費体系</li>
+                <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />委員会 / 役員会の開催頻度</li>
+                <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />会計処理の現状（範囲・方法）</li>
+                <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />発送物の種類と頻度</li>
+                <li className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />優先して委託したい業務</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-6">
+            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-card">
               <h2 className="text-sm font-semibold text-ink">連絡先</h2>
               <p className="mt-2 text-sm text-gray-600">{siteConfig.email}</p>
               <p className="mt-1 text-sm text-gray-600">080-9322-6024</p>

@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 export default function FlowPage() {
   return (
     <>
-      <Section className="pb-8 pt-10">
+      <Section className="hero-gradient pb-8 pt-10">
         <PageHero
           eyebrow="Flow"
           title="お問い合わせから本契約・運用開始までの導入フロー"
@@ -23,15 +23,15 @@ export default function FlowPage() {
         />
       </Section>
 
-      <Section className="bg-surface">
+      <Section>
         <SectionHeading
           title="導入ステップ（5段階）"
           description="実務の引継ぎリスクを抑えるため、段階ごとに確認事項と成果物を明確にして進めます。"
         />
-        <div className="space-y-0 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white">
+        <div className="space-y-0 divide-y divide-gray-200 rounded-xl border border-gray-200 bg-white shadow-card">
           {flowSteps.map((step) => (
             <div key={step.step} className="flex gap-5 px-6 py-6">
-              <span className="font-en mt-0.5 shrink-0 text-sm font-semibold text-accent">{step.step}</span>
+              <span className="font-en mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">{step.step}</span>
               <div>
                 <h2 className="text-base font-semibold text-ink">{step.title}</h2>
                 <p className="mt-2 text-sm leading-relaxed text-gray-500">{step.text}</p>
@@ -41,7 +41,7 @@ export default function FlowPage() {
         </div>
       </Section>
 
-      <Section>
+      <Section className="bg-gray-50">
         <SectionHeading
           title="契約前に確認するポイント"
           description="本契約後の運用開始をスムーズにするため、事前に確認しておく項目です。"
@@ -53,7 +53,7 @@ export default function FlowPage() {
             "報告形式（頻度・粒度・担当者）",
             "資料・データ移管時の管理ルール"
           ].map((point) => (
-            <div key={point} className="rounded-lg border border-gray-200 bg-white px-5 py-4 text-sm text-gray-600">
+            <div key={point} className="rounded-xl border border-gray-200 bg-white px-5 py-4 text-sm text-gray-600 shadow-card">
               {point}
             </div>
           ))}

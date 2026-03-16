@@ -22,9 +22,9 @@ export function PageHero({
     | "privacy";
 }) {
   return (
-    <div className="border-b border-gray-200 pb-10">
+    <div className="pb-10">
       {eyebrow ? (
-        <p className="font-en mb-2 text-xs font-medium uppercase tracking-widest text-accent">
+        <p className="font-en mb-2 text-xs font-semibold uppercase tracking-widest text-brand-600">
           {eyebrow}
         </p>
       ) : null}

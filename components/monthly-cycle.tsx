@@ -9,11 +9,14 @@ export function MonthlyCycle() {
   return (
     <div>
       <h3 className="text-base font-semibold text-ink">毎月の運用サイクル</h3>
-      <div className="mt-5 grid gap-px overflow-hidden rounded-lg border border-gray-200 bg-gray-200 md:grid-cols-4">
-        {cycleItems.map((item) => (
-          <div key={item.week} className="bg-white p-4">
-            <p className="text-xs font-medium text-gray-400">{item.week}</p>
-            <p className="mt-1.5 text-sm text-gray-600">{item.task}</p>
+      <div className="mt-5 grid gap-4 md:grid-cols-4">
+        {cycleItems.map((item, i) => (
+          <div key={item.week} className="rounded-xl border border-gray-200 bg-white p-5 shadow-card">
+            <div className="flex items-center gap-2">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700">{i + 1}</span>
+              <p className="text-xs font-semibold text-brand-600">{item.week}</p>
+            </div>
+            <p className="mt-3 text-sm text-gray-600">{item.task}</p>
           </div>
         ))}
       </div>
