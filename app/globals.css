@@ -4,21 +4,6 @@
 
 :root {
   color-scheme: light;
-  --navy-950: #0b1220;
-  --navy-900: #111d32;
-  --navy-800: #13223d;
-  --navy-700: #1c3254;
-  --teal-500: #1f9993;
-  --teal-400: #2abfbf;
-  --teal-300: #5cd6d6;
-  --teal-100: #e0f5f4;
-  --gray-50: #f8f9fb;
-  --gray-100: #f0f2f5;
-  --gray-200: #e2e5ea;
-  --gray-400: #8a9db5;
-  --gray-500: #5a6b80;
-  --gray-600: #3d4f63;
-  --white: #ffffff;
 }
 
 html {
@@ -26,60 +11,19 @@ html {
 }
 
 body {
-  @apply bg-brand-50 text-brand-600 antialiased;
-  background-image:
-    radial-gradient(circle at 12% 0%, rgba(31, 153, 147, 0.08), transparent 30%),
-    radial-gradient(circle at 90% 5%, rgba(19, 34, 61, 0.06), transparent 34%);
+  @apply bg-white text-gray-600 antialiased;
 }
 
 a {
   @apply underline-offset-4;
 }
 
-.hero-grid {
-  background-size: 24px 24px;
-}
-
-.texture-dots {
-  background-image: url("/assets/textures/dots.svg");
-  background-size: 120px 120px;
-}
-
-.texture-mesh {
-  background-image: url("/assets/textures/mesh.svg");
-  background-size: cover;
-  background-position: center;
-}
-
 h1,
 h2,
 h3 {
-  @apply tracking-tight;
+  @apply tracking-tight text-ink;
 }
 
 .font-en {
   font-family: Poppins, "Noto Sans JP", sans-serif;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.7s ease-out both;
-}
-
-.text-body {
-  @apply text-sm leading-7 text-slate-600 md:text-base;
-}
-
-.text-caption {
-  @apply text-xs leading-6 text-slate-500;
 }

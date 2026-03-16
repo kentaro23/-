@@ -1,6 +1,3 @@
-import { Quote } from "lucide-react";
-import { Card } from "@/components/ui";
-
 export function TestimonialCard({
   title,
   body,
@@ -11,11 +8,10 @@ export function TestimonialCard({
   by: string;
 }) {
   return (
-    <Card className="bg-white">
-      <Quote className="h-7 w-7 text-accent-500" aria-hidden="true" />
-      <h3 className="mt-3 text-sm font-semibold text-slate-900">{title}</h3>
-      <p className="mt-2 text-sm leading-7 text-slate-600">{body}</p>
-      <p className="mt-3 text-xs font-medium text-slate-500">{by}</p>
-    </Card>
+    <div className="border-l-2 border-gray-200 pl-6 py-1">
+      <p className="text-sm font-semibold text-ink">{title}</p>
+      <p className="mt-2 text-sm leading-relaxed text-gray-500">{body}</p>
+      <p className="mt-3 text-xs text-gray-400">{by}</p>
+    </div>
   );
 }

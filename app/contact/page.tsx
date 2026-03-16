@@ -1,5 +1,4 @@
 import { ContactForm } from "@/components/contact-form";
-import { HeroVisual } from "@/components/hero-visual";
 import { PageHero } from "@/components/page-hero";
 import { Section } from "@/components/section";
 import { buildMetadata, siteConfig } from "@/lib/metadata";
@@ -18,35 +17,31 @@ export default function ContactPage() {
         <PageHero
           eyebrow="Contact"
           title="資料請求・見積依頼・ご相談"
-          description="会員数、現在の運営体制、課題感、委託を検討している業務範囲（会員管理・会計・会議運営・発送など）をご記入ください。"
-          visual="contact"
+          description="会員数、現在の運営体制、課題感、委託を検討している業務範囲をご記入ください。"
         />
       </Section>
 
-      <Section className="pt-0 texture-dots">
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-3xl border border-brand-200 bg-white p-6 shadow-sm md:p-8">
+      <Section className="pt-0">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
             <ContactForm />
           </div>
-          <aside className="space-y-4">
-            <div className="rounded-3xl border border-brand-200 bg-white p-4">
-              <HeroVisual name="contact" />
-            </div>
-            <div className="rounded-3xl border border-brand-200 bg-brand-50 p-6">
-              <h2 className="text-sm font-semibold text-slate-900">ご相談時にあるとスムーズな情報</h2>
-              <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-600">
-                <li>・会員数と会費体系</li>
-                <li>・委員会 / 役員会の開催頻度</li>
-                <li>・会計処理の現状（範囲・方法）</li>
-                <li>・発送物の種類と頻度</li>
-                <li>・優先して委託したい業務</li>
+          <aside className="space-y-6">
+            <div className="rounded-lg border border-gray-200 bg-surface p-6">
+              <h2 className="text-sm font-semibold text-ink">ご相談時にあるとスムーズな情報</h2>
+              <ul className="mt-3 space-y-2 text-sm text-gray-500">
+                <li>会員数と会費体系</li>
+                <li>委員会 / 役員会の開催頻度</li>
+                <li>会計処理の現状（範囲・方法）</li>
+                <li>発送物の種類と頻度</li>
+                <li>優先して委託したい業務</li>
               </ul>
             </div>
-            <div className="rounded-3xl border border-accent-300 bg-accent-100 p-6">
-              <h2 className="text-sm font-semibold text-brand-900">連絡先</h2>
-              <p className="mt-2 text-sm text-slate-700">Email: {siteConfig.email}</p>
-              <p className="mt-1 text-sm text-slate-700">TEL: 080-9322-6024</p>
-              <p className="mt-1 text-sm text-slate-700">受付時間: 平日 9:00-18:00</p>
+            <div className="rounded-lg border border-gray-200 bg-white p-6">
+              <h2 className="text-sm font-semibold text-ink">連絡先</h2>
+              <p className="mt-2 text-sm text-gray-600">{siteConfig.email}</p>
+              <p className="mt-1 text-sm text-gray-600">080-9322-6024</p>
+              <p className="mt-1 text-sm text-gray-500">平日 9:00 - 18:00</p>
             </div>
           </aside>
         </div>

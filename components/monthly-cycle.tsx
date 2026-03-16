@@ -7,13 +7,13 @@ const cycleItems = [
 
 export function MonthlyCycle() {
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
-      <h3 className="text-base font-semibold text-slate-900">毎月の運用サイクル</h3>
-      <div className="mt-4 grid gap-3 md:grid-cols-4">
+    <div>
+      <h3 className="text-base font-semibold text-ink">毎月の運用サイクル</h3>
+      <div className="mt-5 grid gap-px overflow-hidden rounded-lg border border-gray-200 bg-gray-200 md:grid-cols-4">
         {cycleItems.map((item) => (
-          <div key={item.week} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-            <p className="text-xs font-semibold tracking-wide text-brand-800">{item.week}</p>
-            <p className="mt-2 text-sm text-slate-700">{item.task}</p>
+          <div key={item.week} className="bg-white p-4">
+            <p className="text-xs font-medium text-gray-400">{item.week}</p>
+            <p className="mt-1.5 text-sm text-gray-600">{item.task}</p>
           </div>
         ))}
       </div>

@@ -1,30 +1,28 @@
 export function FamilyBanner() {
   return (
-    <div className="rounded-3xl border border-brand-200 bg-white p-6 shadow-panel md:p-8">
-      <p className="font-en text-sm font-semibold tracking-wide text-accent-500">MEDIFORMA FAMILY</p>
-      <h3 className="mt-2 text-xl font-bold text-brand-800 md:text-2xl">
-        Mediforma ─ 医療の&quot;困った&quot;を、まるごと。
+    <div className="border-t border-gray-200 pt-10">
+      <p className="text-xs font-medium uppercase tracking-wider text-gray-400">Mediforma Family</p>
+      <h3 className="mt-2 text-lg font-bold text-ink md:text-xl">
+        医療の&quot;困った&quot;を、まるごと。
       </h3>
-      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="rounded-2xl border border-brand-200 bg-brand-50 p-4">
-          <p className="font-en text-sm font-semibold text-brand-800">Society</p>
-          <p className="mt-1 text-sm text-brand-600">学会運営</p>
-        </div>
-        <div className="rounded-2xl border border-brand-200 bg-brand-50 p-4">
-          <p className="font-en text-sm font-semibold text-brand-800">DX</p>
-          <p className="mt-1 text-sm text-brand-600">医療DX</p>
-        </div>
-        <div className="rounded-2xl border border-brand-200 bg-brand-50 p-4">
-          <p className="font-en text-sm font-semibold text-brand-800">Education</p>
-          <p className="mt-1 text-sm text-brand-600">医学教育</p>
-        </div>
-        <div className="rounded-2xl border border-brand-200 bg-brand-50 p-4">
-          <p className="font-en text-sm font-semibold text-brand-800">Consulting</p>
-          <p className="mt-1 text-sm text-brand-600">AI導入・コンサル</p>
-        </div>
+      <div className="mt-6 grid gap-px overflow-hidden rounded-lg border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { name: "Society", desc: "学会運営" },
+          { name: "DX", desc: "医療DX" },
+          { name: "Education", desc: "医学教育" },
+          { name: "Consulting", desc: "AI導入・コンサル" }
+        ].map((item) => (
+          <div key={item.name} className="bg-white px-5 py-4">
+            <p className="font-en text-sm font-semibold text-ink">{item.name}</p>
+            <p className="mt-0.5 text-sm text-gray-500">{item.desc}</p>
+          </div>
+        ))}
       </div>
-      <a href="https://mediforma.com" className="mt-5 inline-flex text-sm font-semibold text-accent-500 no-underline hover:text-accent-600">
-        → Mediforma.com で詳しく見る
+      <a
+        href="https://mediforma.com"
+        className="mt-4 inline-flex text-sm text-gray-500 no-underline hover:text-ink"
+      >
+        mediforma.com &rarr;
       </a>
     </div>
   );

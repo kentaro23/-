@@ -1,8 +1,6 @@
-import Image from "next/image";
-
 export function HeroVisual({
-  name,
-  className
+  name: _name,
+  className: _className
 }: {
   name:
     | "home"
@@ -16,16 +14,6 @@ export function HeroVisual({
     | "privacy";
   className?: string;
 }) {
-  return (
-    <div className={className} aria-hidden="true">
-      <Image
-        src={name === "home" ? "/assets/hero/home.jpg" : `/assets/hero/${name}.svg`}
-        alt=""
-        width={640}
-        height={420}
-        className="h-auto w-full rounded-2xl border border-brand-100/70"
-        priority={name === "home"}
-      />
-    </div>
-  );
+  // Hero visuals removed in redesign — replaced with clean typography-driven layout
+  return null;
 }

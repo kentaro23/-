@@ -58,21 +58,18 @@ export default function PrivacyPage() {
         <PageHero
           eyebrow="Privacy Policy"
           title="プライバシーポリシー"
-          description="以下は、がっかりさせない学会（学会運営代行）のプライバシーポリシーです。事業者情報・安全管理措置・委託先等の実態に合わせて運用します。"
-          visual="privacy"
+          description="がっかりさせない学会（学会運営代行）のプライバシーポリシーです。"
         />
       </Section>
 
-      <Section className="pt-0 texture-dots">
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-          <div className="space-y-6">
-            {sections.map((section) => (
-              <div key={section.title}>
-                <h2 className="text-base font-semibold text-slate-900">{section.title}</h2>
-                <p className="mt-2 text-sm leading-7 text-slate-600">{section.body}</p>
-              </div>
-            ))}
-          </div>
+      <Section className="pt-0">
+        <div className="space-y-8">
+          {sections.map((section) => (
+            <div key={section.title}>
+              <h2 className="text-sm font-semibold text-ink">{section.title}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-gray-500">{section.body}</p>
+            </div>
+          ))}
         </div>
       </Section>
     </>
